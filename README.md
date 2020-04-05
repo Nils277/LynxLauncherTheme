@@ -44,7 +44,9 @@ Many items in the theme are referring to a color. You can find all colors in the
 Drawables can be found in res → drawables*.
 
 **Preview your theme**
-You can get a first impression of the visual appearance of your new theme when you run this application on an emulated or real device. The theme of the preview and the main tab should automatically use the new theme items you have defined in the *themes.xml* file.
+You can get a first impression of the visual appearance of your new theme when you run this application on an emulated or real device. 
+To see most elements used in the theme, edit the "MainActivity.java" file in line 45 to "private static final boolean DEBUG = true;"
+When you now start your app, you can preview most elements used by the theme. **Don't forget the reset this line to *private static final boolean DEBUG = false;* for the release **
 
 **Test your theme**
 To test the final theme you should run your theme on a device where Lynx Launcher is installed and apply your theme to the launcher.
@@ -52,9 +54,9 @@ To test the final theme you should run your theme on a device where Lynx Launche
 
 **Final touches**
 Now the you are almost done with you theme and are happy with the results it is time to make the final touches before you can publish your beautiful new theme.
-These final touches are a **preview**, a **background image**, an **application icon** and a **theme icon**.
+These final touches are a **preview**, a **wallpaper**/**background image**, an **application icon** and a **theme icon**.
 
-The **background image** or *wallpaper* is used inside the theme app as a background for the items in the preview tab. You can choose any image you like. For now it is NOT supported that your **background image** can also be set as the wallpaper on the phone by applying the theme to Lynx Launcher. This will be added at a later time. Name your background image "background.jpg" and place it into the *app/src/main/res/drawable-nodpi* folder inside your project directory.
+The **background image** or **wallpaper** is the default background of your theme that an be optionally applied when your theme use used. Additionally this image is also used inside the theme app preview as a background for the items in the preview tab. You can choose any image you like. Name your background image "background.jpg" and place it into the *app/src/main/res/drawable-nodpi* folder inside your project directory. If you do not want that the background image can be set as a wallpaper, remove the wallpaper="background" entries from the *themes.xml* file.
 
 To create the **preview**, run your finished theme on a device, apply it to the Lynx Launcher and make a screenshot. Rename the screenshot to "screenshot.jpg" and copy it into the *app/src/main/res/drawable-nodpi* folder inside your project directory.
 

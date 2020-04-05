@@ -1,0 +1,81 @@
+<!--Copyright 2020 Nils Büscher
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    tools:keep="@drawable/ic_theme"
+    tools:ignore="VectorRaster">
+  <path
+      android:pathData="M11.8067,2.1618L36.1933,2.1618A9.6449,9.6449 0,0 1,45.8382 11.8067L45.8382,36.1933A9.6449,9.6449 0,0 1,36.1933 45.8382L11.8067,45.8382A9.6449,9.6449 0,0 1,2.1618 36.1933L2.1618,11.8067A9.6449,9.6449 0,0 1,11.8067 2.1618z"
+      android:strokeAlpha="1"
+      android:strokeLineJoin="round"
+      android:strokeWidth="0.52123225"
+      android:strokeColor="#00000000"
+      android:fillAlpha="1"
+      android:strokeLineCap="round">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startY="41.66987"
+          android:startX="5.6098237"
+          android:endY="5.6704745"
+          android:endX="42.060146"
+          android:type="linear">
+        <item android:offset="0" android:color="#FF007064"/>
+        <item android:offset="1" android:color="#FF0c877a"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M23.6363,6.4885C21.8035,6.4885 20.328,7.9641 20.328,9.7968L20.328,14.9913L13.6307,14.9913C11.9692,14.9913 10.6319,16.3291 10.6319,17.9906L10.6319,37.8731C10.6319,38.7639 11.0161,39.5613 11.6287,40.1097C11.7982,40.2614 14.1653,42.7057 17.2114,45.838L36.1931,45.838C41.5364,45.838 45.838,41.5364 45.838,36.1931L45.838,17.2599L36.7817,7.6233C36.176,6.9274 35.2829,6.4885 34.2837,6.4885L23.6363,6.4885z"
+      android:strokeAlpha="1"
+      android:strokeLineJoin="round"
+      android:strokeWidth="3.77211785"
+      android:strokeColor="#00000000"
+      android:fillAlpha="1"
+      android:strokeLineCap="round">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startY="27.090317"
+          android:startX="24.029758"
+          android:endY="59.451206"
+          android:endX="53.102444"
+          android:type="linear">
+        <item android:offset="0" android:color="#47020202"/>
+        <item android:offset="1" android:color="#00020202"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M23.1102,6.5911L33.4125,6.5911A3.201,3.201 0,0 1,36.6135 9.7921L36.6135,31.0129A3.201,3.201 0,0 1,33.4125 34.2139L23.1102,34.2139A3.201,3.201 0,0 1,19.9092 31.0129L19.9092,9.7921A3.201,3.201 0,0 1,23.1102 6.5911z"
+      android:strokeAlpha="1"
+      android:strokeLineJoin="round"
+      android:strokeWidth="0.9656862"
+      android:fillColor="#020202"
+      android:strokeColor="#00000000"
+      android:fillAlpha="1"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M13.4291,14.8182L22.7688,14.8182A2.9019,2.9019 0,0 1,25.6707 17.7201L25.6707,36.9581A2.9019,2.9019 0,0 1,22.7688 39.8599L13.4291,39.8599A2.9019,2.9019 0,0 1,10.5272 36.9581L10.5272,17.7201A2.9019,2.9019 0,0 1,13.4291 14.8182z"
+      android:strokeAlpha="1"
+      android:strokeLineJoin="round"
+      android:strokeWidth="0.9656862"
+      android:fillColor="#f9f9f9"
+      android:strokeColor="#00000000"
+      android:fillAlpha="1"
+      android:strokeLineCap="round"/>
+</vector>

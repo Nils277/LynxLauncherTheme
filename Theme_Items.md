@@ -85,11 +85,13 @@ The dock is the bar, on the left or right side of the home screen which can hous
 **DOCK_BACKGROUND_LEFT**
 The background of the dock, when it is on the left site of the screen.
  - This item **must** add have a padding defined. The default is (1dp , 3dp, 3dp, 3dp).
+ - The dock supports a blurred background. To add support in your theme, this drawable needs to be a [layerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource#LayerList). One layer should have the name *"@android:id/mask"*. This layer acts as the mask to create the blur effect
 
 **DOCK_BACKGROUND_RIGHT**
 The background of the dock, when it is on the right site of the screen.
  - This item **must** add have a padding defined. The default is (3dp , 3dp, 1dp, 3dp).
-
+ - The dock supports a blurred background. To add support in your theme, this drawable needs to be a [layerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource#LayerList). One layer should have the name *"@android:id/mask"*. This layer acts as the mask to create the blur effect
+ 
 **DOCK_ENTRY_BACKGROUND**
 The background of items that are placed inside the dock.
  - This item *should* implement a state selector to show when the item is clicked.
@@ -203,7 +205,8 @@ The search bar is placed on top of most screens and can be used to start a fast 
 **SEARCH_BAR_BACKGROUND**
 The background of the search bar shown on top of the screens.
  - This item **must** add have a padding defined. The default is (4dp , 0dp, 4dp, 0dp).
-
+ - The searchbar supports a blurred background. To add support in your theme, this drawable needs to be a layer drawable. One layer should have the name *"@android:id/mask"*. This layer acts as the mask to create the blur effect
+ 
 ## Colors
 
 **SEARCH_BAR_TEXT**
@@ -248,10 +251,7 @@ Folders can house multiple apps and shortcuts at one place. When clicked, the fo
 **FOLDER_BACKGROUND**
 The background of the folders when they are opened.
  - This item **must** add have a padding defined. The default is (4dp , 4dp, 4dp, 4dp).
-
-**FOLDER_MASK**
-The mask for the shape of the shown folder. *Should* have the same shape as *FOLDER_BACKGROUND*.
-It is used to mask the blurred background shown behind the folders.
+ - The folders supports a blurred background. To add support in your theme, this drawable needs to be a [layerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource#LayerList). One layer should have the name *"@android:id/mask"*. This layer acts as the mask to create the blur effect
 
  **FOLDER_ITEM_BACKGROUND**
 The background of items that are placed inside the folder.

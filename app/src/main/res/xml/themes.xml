@@ -17,11 +17,13 @@
     <!--Specify a theme with its name and mode here
        "title" is the name of the theme displayed to the user
        "mode" is the mode of the theme it can either the "Dark" or "Light".
+       "preview" is the preview image shown to the user when selecting themes.
+       "wallpaper" is an optional wallpaper provided along the theme.
        To have a theme with dark and light mode, create two themes in themes xml with the same title
        bit different modes.
        You can also specify more than one theme in this xml
        -->
-    <theme title="@string/theme_name" mode="light" icon="ic_theme" preview="screenshot">
+    <theme title="@string/theme_name" mode="light" icon="ic_theme" preview="preview_dark" wallpaper="background">
 
         <!--~~~~~~~~~~~~~~Common screen items~~~~~~~~~~~~~~~-->
 
@@ -281,7 +283,7 @@
 
     </theme>
 
-    <theme title="@string/theme_name" mode="dark" icon="ic_theme" preview="screenshot">
+    <theme title="@string/theme_name" mode="dark" icon="ic_theme" preview="preview_dark" wallpaper="background">
 
         <!--~~~~~~~~~~~~~~Common screen items~~~~~~~~~~~~~~~-->
 

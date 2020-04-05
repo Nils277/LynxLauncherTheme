@@ -136,6 +136,15 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("THEME_HIDE", mThemeFragment.hideAfterApply());
         }
 
+        boolean wallpaper = false;
+        if (mLightTheme != null) {
+            wallpaper = mLightTheme.hasWallpaper;
+        }
+        if (mDarkTheme != null) {
+            wallpaper |= mDarkTheme.hasWallpaper;
+        }
+        intent.putExtra("THEME_WALLPAPER", wallpaper);
+
         intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
         intent.setComponent(
                 new ComponentName("org.n277.lynxlauncher", "org.n277.lynxlauncher.visual.ThemeBroadcastReceiver"));

@@ -30,6 +30,9 @@ class Theme {
     // Holds whether this theme is a dark version
     boolean isDark;
 
+    // Holds whether the theme has a wallpaper
+    boolean hasWallpaper;
+
     // The list of backgrounds
     final SimpleArrayMap<String, String> backgrounds = new SimpleArrayMap<>();
 

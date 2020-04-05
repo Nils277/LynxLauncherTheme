@@ -72,6 +72,9 @@ class ThemeParser {
                             } else if (xmlPullParser.getAttributeName(i).startsWith("mode")) {
                                 theme.isDark = xmlPullParser.getAttributeValue(i).toLowerCase().equals("dark");
                             }
+                            else if (xmlPullParser.getAttributeName(i).startsWith("wallpaper")) {
+                                theme.hasWallpaper = true;
+                            }
                         }
                         eventType = xmlPullParser.next();
 

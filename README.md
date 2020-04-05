@@ -32,10 +32,10 @@ At line 24 you can see the header of a **theme** which contains the xml attribut
 - **preview** is the name of the imge that will be shown as a preview of your theme in Lynx Launcher. You don't have to change this value for now.
 
 Inside the **theme** you will see items called *icon*, *background*, *color*, *boolean* and *value*. Each item stands for a different themable part of the launcher and can be changed to your likings. The **name** attribute is used to tell Lynx Launcher where the item should be used.
-You can find a list of all available name attributes here: [Themable Items](TODO). Please read this document carefully to make sure that your theme is working as intended.
+You can find a list of all available name attributes here: [Themable Items](Theme_Items.md). Please read this document carefully to make sure that your theme is working as intended.
 
 **Now you can finally start theming!**
-Go through the items and decide which one you want to change, add or remove. Each type of the item can accept different types of resources explained here: [Item types and resources](TODO).
+Go through the items and decide which one you want to change, add or remove. Each type of the item can accept different types of resources explained here: [Item types and resources](Theme_Resources.md).
 Change the existing drawables or colors and add or remove themable items as you see fit.
 
 Many items in the theme are referring to a color. You can find all colors in the file res → values → colors.xml. You can edit these colors as you see fit or also add new ones.

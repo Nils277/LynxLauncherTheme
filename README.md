@@ -4,6 +4,8 @@ This repository contains the Android Studio project for the "Simple Theme" for t
 
 The purpose of this template project is to demonstrate, how you can create a new theme for the Lynx Launcher on your own. I hope this project will help you get started. The code is documented with comments to explain what is done. If you have any questions or stumble upon wrong or outdated information feel free to contact me.
 
+![Theme example](/sample.png)
+
 ### Requirements
 Before you start creating a theme you nedd to have the latest version of Android Studio installed on your computer. To learn how to install and use Android Studio please start here:
 [Google Developer: Android Studio](https://developer.android.com/studio)

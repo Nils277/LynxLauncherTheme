@@ -48,6 +48,21 @@ Main color used for text of normal items shown on the screens.
 **MAIN_ITEM_TEXT_COLOR_SECONDARY**
 Secondary color used for text of normal items shown on the screens. E,g, for the phone numbers of contacts.
 
+**MAIN_NAVIGATION_BAR_COLOR**
+The color of the navigation bar in the main screen of the launcher.
+
+**MAIN_STATUS_BAR_COLOR**
+The color of the status bar in the main screen of the launcher.
+
+## Booleans
+
+**MAIN_DARK_NAVIGATION_BAR_ICONS**
+When the the icons in the navigation bar in the main screen are dark, else they are bright.
+
+**MAIN_DARK_STATUS_BAR_ICONS**
+When the the icons in the status bar in the main screen are dark, else they are bright.
+
+
 # Home Screen
 The home screen is the main screen which is visible as the first screen of the launcher. It also houses the dock.
 
@@ -92,6 +107,12 @@ The background of the dock, when it is on the right site of the screen.
  - This item **must** add have a padding defined. The default is (3dp , 3dp, 1dp, 3dp).
  - The dock supports a blurred background. To add support in your theme, this drawable needs to be a [layerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource#LayerList). One layer should have the name *"@android:id/mask"*. This layer acts as the mask to create the blur effect
  
+**DOCK_BACKGROUND_BOTTOM**
+The background of the dock, when it is on the bottom of the screen.
+ - This item **must** add have a padding defined. The default is (3dp , 3dp, 3dp, 3dp).
+ - The dock supports a blurred background. To add support in your theme, this drawable needs to be a [layerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource#LayerList). One layer should have the name *"@android:id/mask"*. This layer acts as the mask to create the blur effect
+ 
+ 
 **DOCK_ENTRY_BACKGROUND**
 The background of items that are placed inside the dock.
  - This item *should* implement a state selector to show when the item is clicked.
@@ -116,6 +137,12 @@ The background of the indexer for the alphabetical index.
 **APP_LIST_INDEXER_HINT**
 The background of the hint shown next to the finger tip to show the current starting letter.
 
+**PROFILE_BUTTON**
+The background of the buttons to change the profile (work or private).
+
+**PROFILE_BACKGROUND**
+The background of the button bar for the profile buttons.
+
 ## Colors
 
 **APP_LIST_INDEX_BAR_ACTIVE_TEXT_COLOR**
@@ -127,6 +154,11 @@ Color used for the letters used in the alphabetical index bar for letters that a
 **APP_LIST_INDEX_HINT_TEXT_COLOR**
 Color used for the letter in the hint shown next to the finger tip to show the current starting letter.
 
+**PROFILE_ACTIVE**
+The text color of the buttons for the active profile.
+
+**PROFILE_INACTIVE**
+The text color of the buttons for the inactive profile.
 
 # Favorites Screen
 The favorites screen shows all the favorite apps and contacts.
@@ -157,9 +189,11 @@ The desktop screens can house the widgets, apps, folder and shortcuts
 
 **DESKTOP_LEFT_SCREEN**
 Hint for a screen shown on the left site of a desktop when the user is performing a drag and drop to indicate the the user can drag the item to a screen on the left.
+(This drawable is not used in LynxLauncher version 1.4.0 and later)
 
 **DESKTOP_RIGHT_SCREEN**
 Hint for a screen shown on the right site of a desktop when the user is performing a drag and drop to indicate the the user can drag the item to a screen on the right.
+(This drawable is not used in LynxLauncher version 1.4.0 and later)
 
 **DESKTOP_ITEM_BACKGROUND**
 Background for apps, shortcuts and folders places on the desktop.
@@ -224,6 +258,9 @@ The color of the highlight when the text in the search bar is selected
 **SEARCH_BAR_TEXT_HANDLE**
 The color of the selection handle in the search bar. Does not work on Android 10 and above.
 
+**SETTING_ICON_BACKGROUND**
+The color of setting items that can be searched for.
+
 ## Icons
 
 **ICON_SEARCH**
@@ -249,8 +286,31 @@ Width of the margin to the left and right of the search bar.
 
 # Management Screen
 The management screen allows to change and alter the positions of the screens.
+The items for this screen are NOT optional but will be replaced with the default theme items when not defined for
+compatibility reasons
 
 ## Backgrounds
+
+**MANAGE_SHEET**
+Background of the bottom sheet for the management options.
+
+**MANAGE_SCREEN**
+Background of a used screen in the management screen.
+
+**MANAGE_EMPTY**
+Background of an unused screen / empty space in the management screen.
+
+**MANAGE_ACCEPT**
+Background of the button to accept the changed layout.
+
+**MANAGE_ITEM**
+Background of the clickable items in the bottom sheet of the management screen.
+
+**MANAGE_REMOVE**
+Background of the button to remove a screen.
+
+**MANAGE_ADD**
+Background of the button to add a screen.
 
 ## Icons
 
@@ -304,7 +364,22 @@ Icon in the management screen for the search screen.
 
 ## Colors
 
+**MANAGE_TEXT_HEADER**
+The color of the text in the header of the screen manager.
 
+**MANAGE_TEXT_SUBTITLE**
+The color of the subtitle text in the header of the screen manager.
+
+**MANAGE_TEXT_ITEM**
+The color of texts of the selectable options in the screen manager.
+
+**MANAGE_TEXT_SCREEN**
+The color of texts of the screens in the screen manager.
+
+## Booleans
+
+**MANAGE_DARK_NAVIGATION_BAR_ICONS**
+When the the icons in the navigation bar in the management screen are dark, else they are bright.
 
 # Folders
 Folders can house multiple apps and shortcuts at one place. When clicked, the folder is shown with its content.
@@ -596,6 +671,12 @@ Color used for the scroll bars in the settings screens.
 **SETTINGS_BACKGROUND_WARNING**
 Color for a warning shown in the settings when some needed permission are not granted. Should be held in a reddish signal color.
 
+**SETTINGS_NAVIGATION_BAR_COLOR**
+The color of the navigation bar in the settings screen.
+
+**SETTINGS_STATUS_BAR_COLOR**
+The color of the status bar in the settings screen.
+
 ## Icons
 
 **ICON_SETTINGS_HOME**
@@ -667,6 +748,13 @@ Icon in the main settings screen to reset the launcher on the smartphone and sel
 **ICON_SETTINGS_SHOW**
 Icon in the toolbar in the settings with the hidden apps to show the selected hidden apps again.
 
+## Booleans
+
+**SETTINGS_DARK_NAVIGATION_BAR_ICONS**
+When the the icons in the navigation bar in the settings screen are dark, else they are bright.
+
+**SETTINGS_DARK_STATUS_BAR_ICONS**
+When the the icons in the status bar in the settings screen are dark, else they are bright.
 
 # Controls
 Theme items used for controls used in the setting screen of the application

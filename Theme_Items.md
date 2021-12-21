@@ -247,8 +247,8 @@ Width of the margin to the top and bottom of the search bar.
 Width of the margin to the left and right of the search bar. 
 
 
-# Favorites Screen
-The favorites screen shows all the favorite apps and contacts.
+# Management Screen
+The management screen allows to change and alter the positions of the screens.
 
 ## Backgrounds
 

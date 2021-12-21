@@ -197,6 +197,9 @@ Icon for the header when the recently used search results are shown.
 **ICON_SEARCH_RESULT_WEB**
 Icon for the header for the online search options.
 
+**ICON_SEARCH_RESULT_SHORTCUTS**
+Icon for the header of search results in the shortcuts
+
 # Search bar
 The search bar is placed on top of most screens and can be used to start a fast search for apps, contacts etc.
 

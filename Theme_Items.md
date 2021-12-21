@@ -356,6 +356,18 @@ Icon used on the favorites screen to unpin an application.
 **ICON_POPUP_SCALE**
 Icon used in the context menu of a widget to start scaling it.
 
+**ICON_POPUP_REFRESH**
+Icon used in the context menu of a widget to refresh it.
+
+**ICON_POPUP_ENABLE_WORK**
+Icon in the main context menu to enable the work profile if available.
+
+**ICON_POPUP_DISABLE_WORK**
+Icon in the main context menu to disable the work profile if available.
+
+**ICON_UNINSTALL**
+Icon used on the applications screen to uninstall an application.
+
 # Dialogs
 Dialogs are used mainly for the settings or to change the appearance of applications or folders.
 
@@ -524,6 +536,9 @@ Color for a warning shown in the settings when some needed permission are not gr
 **ICON_SETTINGS_HOME**
 Icon in the main settings screen for the settings of the home screen.
 
+**ICON_SETTINGS_DOCK**
+Icon in the main settings screen for the settings of the dock.
+
 **ICON_SETTINGS_APPS**
 Icon in the main settings screen for the settings of the all apps screen.
 
@@ -559,12 +574,24 @@ Icon in the main settings screen for options to save and restore the launcher or
 
 **ICON_SETTINGS_FEEDBACK**
 Icon in the main settings screen to take the user to the store page of the app to make a feedback.
+(This icon is not used in LynxLauncher version 1.4.0 and later)
+
+**ICON_SETTINGS_INFO**
+Icon in the main settings screen for options regarding information about the launcher.
+
+**ICON_SETTINGS_HELP**
+Icon in the main settings screen for options regarding "help & support" for the launcher.
+
+**ICON_SETTINGS_WORK_PROFILE**
+Icon in the main settings screen for options for the work profile if available.
 
 **ICON_SETTINGS_DATA_PROTECTION**
 Icon in the main settings screen to show a dialog with the privacy protection texts.
+(This icon is not used in LynxLauncher version 1.4.0 and later)
 
 **ICON_SETTINGS_LICENSES**
 Icon in the main settings screen to show a dialog showing the licenses used by the launcher.
+(This icon is not used in LynxLauncher version 1.4.0 and later)
 
 **ICON_SETTINGS_VERSION**
 Icon in the main settings screen for the version of the application

@@ -246,6 +246,66 @@ Width of the margin to the top and bottom of the search bar.
 **SEARCH_BAR_HORIZONTAL_BORDER**
 Width of the margin to the left and right of the search bar. 
 
+
+# Favorites Screen
+The favorites screen shows all the favorite apps and contacts.
+
+## Backgrounds
+
+## Icons
+
+**ICON_MANAGE_ONE_FINGER**
+Icon in the management screen to switch to the one finger gestures.
+
+**ICON_MANAGE_TWO_FINGERS**
+Icon in the management screen to switch to the two finger gestures.
+
+**ICON_MANAGE_PRESETS**
+Icon in the management screen to show available presets for the screen layout.
+
+**ICON_MANAGE_INFINITE_SCROLL**
+Icon in the management screen to show the infinite scroll options.
+
+**ICON_MANAGE_MORE**
+Icon in the management screen to show more available options.
+
+**ICON_MANAGE_ADVANCED**
+Icon in the management screen to switch to the advanced mode.
+
+**ICON_MANAGE_NORMAL**
+Icon in the management screen to switch to the normal mode.
+
+**ICON_MANAGE_RESET**
+Icon in the management screen to reset the current layout.
+
+**ICON_MANAGE_APPLY**
+Icon in the management screen to apply the current layout.
+
+**ICON_MANAGE_SCREEN_REMOVE**
+Icon in the management screen to remove a screen.
+
+**ICON_MANAGE_SCREEN_ADD**
+Icon in the management screen to add a screen.
+
+**ICON_MANAGE_SCREEN_HOME**
+Icon in the management screen for the home screen.
+
+**ICON_MANAGE_SCREEN_APPS**
+Icon in the management screen for the applications screen.
+
+**ICON_MANAGE_SCREEN_FAVORITES**
+Icon in the management screen for the favorites screen.
+
+**ICON_MANAGE_SCREEN_DESKTOP**
+Icon in the management screen for the desktop screen.
+
+**ICON_MANAGE_SCREEN_SEARCH**
+Icon in the management screen for the search screen.
+
+## Colors
+
+
+
 # Folders
 Folders can house multiple apps and shortcuts at one place. When clicked, the folder is shown with its content.
 
@@ -364,6 +424,11 @@ Icon in the main context menu to enable the work profile if available.
 
 **ICON_POPUP_DISABLE_WORK**
 Icon in the main context menu to disable the work profile if available.
+
+**ICON_POPUP_MANAGE_SCREENS**
+Icon in the main context menu to switch to the screen layout management screen.
+
+
 
 **ICON_UNINSTALL**
 Icon used on the applications screen to uninstall an application.

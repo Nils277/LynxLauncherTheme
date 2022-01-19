@@ -6,6 +6,8 @@ The purpose of this template project is to demonstrate, how you can create a new
 
 You can use either the java or the kotlin variant of the theme template, depending on your preference. They are both functionally equivalent.
 
+**Note:** To guarantee backward compatibility and ensure that Lynx Launcher can use dark and light theme variants on Android versions below 12, the themes do not utilize the new dark mode support from Android 12.
+
 ![Theme example](/sample.png)
 
 ### Requirements

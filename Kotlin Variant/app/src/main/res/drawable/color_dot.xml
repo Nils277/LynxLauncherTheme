@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2018 N277 Labs
+ * All Rights Reserved.
+ *
+ * Unless required by applicable law or agreed to in writing, this software
+ * is distributed on a "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.
+ *
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ */
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            android:shape="oval">
+            <solid android:color="#40000000" />
+        </shape>
+    </item>
+    <item android:bottom="1dp">
+        <shape
+            android:shape="oval">
+            <solid android:color="#ff177bb2" />
+        </shape>
+    </item>
+</layer-list>

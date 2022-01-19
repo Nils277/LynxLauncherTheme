@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright 2020 Nils Büscher
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="4dp"
+    android:height="50dp"
+    android:viewportWidth="5"
+    android:viewportHeight="50"
+    tools:keep="@drawable/clock_minute_hand">
+    <path
+        android:pathData="m2.5,0c0.6248,0 1.2307,0.6951 1.2496,1.3898l1.2496,45.8307c0.0379,1.3891 -1.2496,2.7795 -2.4992,2.7795 -1.2496,0 -2.5371,-1.3904 -2.4992,-2.7795l1.2496,-45.8307c0.0189,-0.6946 0.6248,-1.3898 1.2496,-1.3898z"
+        android:strokeAlpha="1"
+        android:strokeLineJoin="round"
+        android:strokeWidth="0.05711906"
+        android:fillColor="#ffffff"
+        android:strokeColor="#00000000"
+        android:fillAlpha="1"
+        android:strokeLineCap="round"/>
+</vector>

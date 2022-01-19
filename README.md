@@ -4,6 +4,8 @@ This repository contains the Android Studio project for the "Simple Theme" for t
 
 The purpose of this template project is to demonstrate, how you can create a new theme for the Lynx Launcher on your own. I hope this project will help you get started. The code is documented with comments to explain what is done. If you have any questions or stumble upon wrong or outdated information feel free to contact me.
 
+You can use either the java or the kotlin variant of the theme template, depending on your preference. They are both functionally equivalent.
+
 ![Theme example](/sample.png)
 
 ### Requirements

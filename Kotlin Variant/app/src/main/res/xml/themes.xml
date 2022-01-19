@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright 2020 Nils Büscher
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.-->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@xml/themes">
+    <!--Specify a theme with its name and mode here
+       "title" is the name of the theme displayed to the user
+       "mode" is the mode of the theme it can either the "Dark" or "Light".
+       "preview" is the preview image shown to the user when selecting themes.
+       "wallpaper" is an optional wallpaper provided along the theme.
+       To have a theme with dark and light mode, create two themes in themes xml with the same title
+       bit different modes.
+       You can also specify more than one theme in this xml
+       -->
+    <theme title="@string/theme_name" mode="light" icon="ic_theme" preview="preview_dark" wallpaper="background">
+
+        <!--~~~~~~~~~~~~~~Common screen items~~~~~~~~~~~~~~~-->
+
+        <!--Colors-->
+        <color name="MAIN_HEADER_TEXT_COLOR">@color/theme_dark_primary_text</color>
+        <color name="MAIN_ITEM_TEXT_COLOR">@color/theme_light_primary_text</color>
+        <color name="MAIN_ITEM_TEXT_COLOR_SECONDARY">@color/theme_light_secondary_text</color>
+
+        <!--Drawables-->
+        <background name="MAIN_GRID_ITEM">@drawable/theme_light_grid_entry</background>
+        <background name="MAIN_LIST_ITEM">@drawable/theme_light_list_entry</background>
+        <background name="MAIN_HEADER">@drawable/theme_light_header</background>
+        <background name="MAIN_CONTACT_ACTION">@drawable/theme_light_contact_action</background>
+        <background name="SCREEN_BORDER">@drawable/theme_all_screen_border</background>
+
+        <!--~~~~~~~~~~~~~~The home screen~~~~~~~~~~~~~~~-->
+
+        <!--Booleans-->
+        <bool name="HOME_CLOCK_DRAW_NUMERALS">true</bool>
+        <bool name="HOME_CLOCK_CAN_COLOR">true</bool>
+
+        <!--Drawables-->
+        <background name="HOME_CLOCK_BACKGROUND">@drawable/clock_background</background>
+        <background name="HOME_CLOCK_CENTER">@drawable/clock_center</background>
+        <background name="HOME_CLOCK_MINUTE_HAND">@drawable/clock_minute_hand</background>
+        <background name="HOME_CLOCK_HOUR_HAND">@drawable/clock_hour_hand</background>
+
+        <!--~~~~~~~~~~~~~~~~~~~Dock~~~~~~~~~~~~~~~~~~~~~-->
+
+        <!--Drawables-->
+        <background name="DOCK_BACKGROUND_LEFT">@drawable/theme_light_dock_background_left</background>
+        <background name="DOCK_BACKGROUND_RIGHT">@drawable/theme_light_dock_background_right</background>
+        <background name="DOCK_ENTRY_BACKGROUND">@drawable/theme_light_dock_entry</background>
+        <background name="DOCK_ALL_APPS_ICON">@drawable/theme_light_dock_all_apps</background>
+
+        <!--~~~~~~~~The all applications screen~~~~~~~~-->
+
+        <!--Colors-->
+        <color name="APP_LIST_INDEX_BAR_ACTIVE_TEXT_COLOR">@color/theme_dark_primary_text</color>
+        <color name="APP_LIST_INDEX_BAR_INACTIVE_TEXT_COLOR">@color/theme_dark_secondary_text</color>
+        <color name="APP_LIST_INDEX_HINT_TEXT_COLOR">@color/theme_light_primary_text</color>
+
+        <!--Drawables-->
+        <background name="APP_LIST_INDEXER">@drawable/theme_light_indexer</background>
+        <background name="APP_LIST_INDEXER_SELECTION">@drawable/theme_light_indexer_selection</background>
+        <background name="APP_LIST_INDEXER_HINT">@drawable/theme_light_indexer_hint</background>
+
+        <!--~~~~~~~~~~~~~Favorites Screen~~~~~~~~~~~~~~-->
+
+        <!--Icons-->
+        <icon name="ICON_FAVORITES_CONTACT">@color/theme_light_icon_color</icon>
+        <icon name="ICON_FAVORITES_CALL">@color/theme_light_icon_color</icon>
+        <icon name="ICON_FAVORITES_MESSAGE">@color/theme_light_icon_color</icon>
+
+        <!--Drawables-->
+        <background name="CONTACT_SELECT_BACKGROUND">@drawable/theme_light_grid_entry</background>
+
+        <!--~~~~~~~~~~~~~~~~~~~Desktops~~~~~~~~~~~~~~~~~~~-->
+
+        <!--Colors-->
+        <color name="DESKTOP_DROP_HINT">@color/theme_light_primary_text</color>
+        <color name="DESKTOP_SCALE_HANDLES">@color/theme_light_primary_text</color>
+        <color name="DESKTOP_TEXT">@color/theme_light_primary_text</color>
+
+        <!--Drawables-->
+        <background name="DESKTOP_LEFT_SCREEN">@drawable/theme_all_board_left_screen</background>
+        <background name="DESKTOP_RIGHT_SCREEN">@drawable/theme_all_board_right_screen</background>
+        <background name="DESKTOP_ITEM_BACKGROUND">@drawable/theme_light_grid_entry</background>
+
+        <!--~~~~~~~~~~~~~~~Search Screen~~~~~~~~~~~~~~~-->
+
+        <!--Icons-->
+        <icon name="ICON_SEARCH_RESULT_CONTACT">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_SETTING">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_CALCULATOR">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_RECENT">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_WEB">@color/theme_light_icon_color</icon>
+
+        <!--~~~~~~~~~~~~~~~Search bar~~~~~~~~~~~~~~~~~~-->
+
+        <!--Dimension-->
+        <dimen name="SEARCH_BAR_VERTICAL_BORDER">0dp</dimen>
+        <dimen name="SEARCH_BAR_HORIZONTAL_BORDER">0dp</dimen>
+
+        <!--Colors-->
+        <color name="SEARCH_BAR_TEXT">@color/theme_dark_primary_text</color>
+        <color name="SEARCH_BAR_TEXT_HINT">@color/theme_dark_secondary_text</color>
+        <color name="SEARCH_BAR_TEXT_HIGHLIGHT">@color/theme_light_text_highlight</color>
+        <color name="SEARCH_BAR_TEXT_HANDLE">@color/theme_light_text_handle</color>
+
+        <!--Icons-->
+        <icon name="ICON_SEARCH">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_ABORT">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_VOICE">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_RESET">@color/theme_light_icon_color</icon>
+
+        <!--Drawables-->
+        <background name="SEARCH_BAR_BACKGROUND">@drawable/theme_light_search_bar</background>
+
+        <!--~~~~~~~~~~~~~~~~~~Folders~~~~~~~~~~~~~~~~~~-->
+
+        <!--Colors-->
+        <color name="FOLDER_NAME_TEXT">@color/theme_dark_primary_text</color>
+        <color name="FOLDER_NAME_HIGHLIGHT">@color/theme_light_text_highlight</color>
+        <color name="FOLDER_NAME_HANDLE">@color/theme_light_text_handle</color>
+        <color name="FOLDER_ITEM_TEXT">@color/theme_dark_primary_text</color>
+        <color name="FOLDER_DEFAULT_BACKGROUND_COLOR">@color/theme_light_element</color>
+
+        <!--Icons-->
+        <icon name="ICON_FOLDER_SORT">@color/theme_light_icon_color</icon>
+
+        <!--Drawables-->
+        <background name="FOLDER_BACKGROUND">@drawable/theme_light_folder_background</background>
+        <background name="FOLDER_ITEM_BACKGROUND">@drawable/theme_light_folder_entry</background>
+        <background name="FOLDER_SORT_BACKGROUND">@drawable/theme_light_grid_entry</background>
+
+        <!--~~~~~~~~~~~~~~~~Context Menus~~~~~~~~~~~~~~~~-->
+
+        <!--Icons-->
+        <icon name="ICON_POPUP_INFO">@color/theme_light_icon_color</icon>
+        <icon name="ICON_POPUP_EDIT">@color/theme_light_icon_color</icon>
+        <icon name="ICON_POPUP_REMOVE">@color/theme_light_icon_color</icon>
+        <icon name="ICON_POPUP_WALLPAPER">@color/theme_light_icon_color</icon>
+        <icon name="ICON_POPUP_SETTINGS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_POPUP_WIDGETS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_POPUP_PIN">@color/theme_light_icon_color</icon>
+        <icon name="ICON_POPUP_UNPIN">@color/theme_light_icon_color</icon>
+        <icon name="ICON_POPUP_SCALE">@color/theme_light_icon_color</icon>
+
+        <!--Colors-->
+        <color name="POPUP_ITEM_TEXT_COLOR">@color/theme_dark_primary_text</color>
+
+        <!--Drawables-->
+        <background name="POPUP_BACKGROUND">@drawable/theme_light_popup_background</background>
+        <background name="POPUP_ITEM_BACKGROUND">@drawable/theme_light_popup_item</background>
+        <background name="POPUP_DIVIDER">@color/theme_light_popup_divider</background>
+
+        <!--~~~~~~~~~~~~~~~~~~Dialogs~~~~~~~~~~~~~~~~~~-->
+
+        <!--Icons-->
+        <icon name="ICON_HIDE">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SHOW">@color/theme_light_icon_color</icon>
+        <icon name="ICON_RESET">@color/theme_light_icon_color</icon>
+
+        <!--Colors-->
+        <color name="DIALOG_DIVIDER">@color/theme_light_dialog_divider</color>
+        <color name="DIALOG_TEXT_TITLE_COLOR">@color/theme_dark_primary_text</color>
+        <color name="DIALOG_TEXT_PRIMARY_COLOR">@color/theme_dark_primary_text</color>
+        <color name="DIALOG_TEXT_SECONDARY_COLOR">@color/theme_dark_primary_text</color>
+        <color name="DIALOG_TEXT_HIGHLIGHT">@color/theme_light_text_highlight</color>
+        <color name="DIALOG_TEXT_HANDLE">@color/theme_light_text_handle</color>
+        <color name="DIALOG_LICENSE_BACKGROUND">@color/theme_light_dialog_license_background</color>
+        <color name="DIALOG_TEXT_HEADER_COLOR">@color/theme_dark_primary_text</color>
+        <color name="DIALOG_TEXT_BUTTON_COLOR">@color/theme_dark_primary_text</color>
+        <color name="DIALOG_ICON_SHAPE_COLOR">@color/theme_dark_primary_text</color>
+        <color name="DIALOG_ICON_COLOR_SELECTED">@color/theme_light_dialog_icon_selected</color>
+        <color name="DIALOG_SCROLL_BAR">@color/theme_dark_secondary_text</color>
+
+        <!--Drawables-->
+        <background name="DIALOG_TITLE_TOOLBAR">@drawable/theme_light_dialog_title</background>
+        <background name="DIALOG_BACKGROUND">@color/theme_light_dialog_background</background>
+        <background name="DIALOG_BUTTON">@drawable/theme_light_dialog_button</background>
+        <background name="DIALOG_CONTENT_BUTTON">@drawable/theme_light_dialog_button_content</background>
+        <background name="DIALOG_SELECTABLE_ITEM">@drawable/theme_light_dialog_item</background>
+        <background name="DIALOG_SELECTABLE_ICON">@drawable/theme_light_dialog_icon_entry</background>
+        <background name="DIALOG_HEADER">@drawable/theme_light_dialog_header</background>
+        <background name="DIALOG_LISTENING_PULSE">@drawable/theme_light_listening_pulse</background>
+        <background name="DIALOG_LISTENING">@drawable/theme_light_listening</background>
+
+        <!--~~~~~~~~~~~~~~~~~Settings~~~~~~~~~~~~~~~~~~-->
+
+        <!--Colors-->
+        <color name="TOOLBAR_TEXT_COLOR">@color/theme_light_primary_text</color>
+        <color name="SETTINGS_TEXT_CATEGORY_COLOR">@color/theme_dark_primary_text</color>
+        <color name="SETTINGS_TEXT_TITLE_COLOR">@color/theme_dark_primary_text</color>
+        <color name="SETTINGS_TEXT_SETTING_COLOR">@color/theme_dark_primary_text</color>
+        <color name="SETTINGS_TEXT_SETTING_VALUE_COLOR">@color/theme_dark_secondary_text</color>
+        <color name="SETTINGS_DIVIDER">@color/theme_light_settings_divider</color>
+        <color name="SETTINGS_ICON_COLOR">@color/theme_dark_primary_text</color>
+        <color name="SETTINGS_SCROLL_BAR">@color/theme_dark_primary_text</color>
+        <color name="SETTINGS_BACKGROUND_WARNING">#FFCF1D1D</color>
+        <color name="SETTINGS_TAB_TEXT_COLOR_ACTIVE">@color/theme_light_primary_text</color>
+        <color name="SETTINGS_TAB_TEXT_COLOR_INACTIVE">@color/theme_dark_secondary_text</color>
+
+        <!--Icons-->
+        <icon name="ICON_SETTINGS_HOME">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_APPS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_FAVORITES">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_SEARCH">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_DESKTOP">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_GENERAL">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_NOTIFICATIONS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_FOLDER">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_APPEARANCE">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_GESTURES">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_HIDDEN_APPS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_SAVE_AND_RESTORE">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_FEEDBACK">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_DATA_PROTECTION">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_LICENSES">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_VERSION">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_HOME_RESET">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_SHOW">@color/theme_light_icon_color</icon>
+
+        <!--Drawables-->
+        <background name="SETTINGS_CLICKABLE_ITEM_BACKGROUND">@drawable/theme_light_settings_item</background>
+        <background name="SETTINGS_CLICKABLE_MAIN_SETTING_BACKGROUND">@drawable/theme_light_settings_item</background>
+        <background name="SETTINGS_BACKGROUND">@color/theme_light_settings_background</background>
+        <background name="SETTINGS_MAIN_BACKGROUND">@color/theme_light_settings_background</background>
+        <background name="SETTINGS_BACKGROUND_CATEGORY">@color/theme_light_settings_category</background>
+        <background name="SETTINGS_TAB_BACKGROUND">@color/theme_light_settings_tab_background</background>
+
+        <!--~~~~~~~~~~~~~~~~~~Controls~~~~~~~~~~~~~~~~~~~-->
+
+        <!--Drawables-->
+        <background name="CONTROL_WARNING_BUTTON">@drawable/theme_light_control_button_warning</background>
+        <background name="CONTROL_BUTTON_SETTINGS">@drawable/theme_light_settings_item</background>
+
+        <!--Colors-->
+        <color name="CONTROL_HIGHLIGHT_COLOR">@color/theme_light_control_highlight</color>
+
+        <!--~~~~~~~~~~~~~~~~~~Miscellaneous~~~~~~~~~~~~~~~~~~~-->
+
+        <!--Booleans-->
+        <bool name="MAIN_DARK_NAVIGATION_BAR_ICONS">false</bool>
+        <bool name="MAIN_DARK_STATUS_BAR_ICONS">true</bool>
+        <bool name="SETTINGS_DARK_NAVIGATION_BAR_ICONS">false</bool>
+        <bool name="SETTINGS_DARK_STATUS_BAR_ICONS">false</bool>
+
+        <!--Drawables-->
+        <background name="BADGE_ICON">@drawable/theme_light_badge_icon</background>
+        <background name="APP_WIDGET_HEADER">@drawable/theme_light_header</background>
+        <background name="APP_WIDGET_PREVIEW">@drawable/theme_light_widget_preview</background>
+        <background name="DRAG_AND_DROP_SWITCH">@drawable/theme_light_dnd_switch</background>
+        <background name="PAGE_INDICATOR_EMPTY">@drawable/theme_light_page_indicator_inactive</background>
+        <background name="PAGE_INDICATOR_FILLING">@drawable/theme_light_page_indicator_moving</background>
+        <background name="PAGE_INDICATOR_FULL">@drawable/theme_light_page_indicator_active</background>
+        <background name="BACKGROUND">#60000000</background>
+        <background name="TOOLBAR">@color/theme_light_settings_tab_background</background>
+        <background name="APP_FOLDER_SUGGEST">@drawable/theme_light_folder_suggest</background>
+
+        <!--Colors-->
+        <color name="DRAG_AND_DROP_HOVER">@color/theme_light_primary_text</color>
+        <color name="DRAG_AND_DROP_STANDARD">@color/theme_light_primary_text</color>
+        <color name="PLACEHOLDER_TEXT_COLOR">@color/theme_light_placeholder</color>
+        <color name="SETTINGS_NAVIGATION_BAR_COLOR">@color/theme_nav_bar_color</color>
+        <color name="SETTINGS_STATUS_BAR_COLOR">@color/theme_light_status_bar</color>
+        <color name="MAIN_NAVIGATION_BAR_COLOR">#00000000</color>
+        <color name="MAIN_STATUS_BAR_COLOR">@color/theme_light_main_status_bar</color>
+        <color name="BADGE_ICON_DEFAULT_COLOR">#FF0c877a</color>
+        <color name="BADGE_TEXT_COLOR">#FFF5F5F5</color>
+        <color name="APP_WIDGET_TEXT">@color/theme_light_primary_text</color>
+        <color name="TOOLBAR_TEXT_COLOR">@color/theme_light_primary_text</color>
+
+        <!--Icons-->
+        <icon name="ICON_SWITCH_SCREEN">@color/theme_dark_primary_text</icon>
+
+    </theme>
+
+    <theme title="@string/theme_name" mode="dark" icon="ic_theme" preview="preview_dark" wallpaper="background">
+
+        <!--~~~~~~~~~~~~~~Common screen items~~~~~~~~~~~~~~~-->
+
+        <!--Colors-->
+        <color name="MAIN_HEADER_TEXT_COLOR">@color/theme_light_primary_text</color>
+        <color name="MAIN_ITEM_TEXT_COLOR">@color/theme_light_primary_text</color>
+        <color name="MAIN_ITEM_TEXT_COLOR_SECONDARY">@color/theme_light_secondary_text</color>
+
+        <!--Drawables-->
+        <background name="MAIN_GRID_ITEM">@drawable/theme_dark_grid_entry</background>
+        <background name="MAIN_LIST_ITEM">@drawable/theme_dark_list_entry</background>
+        <background name="MAIN_HEADER">@drawable/theme_dark_header</background>
+        <background name="MAIN_CONTACT_ACTION">@drawable/theme_dark_contact_action</background>
+        <background name="SCREEN_BORDER">@drawable/theme_all_screen_border</background>
+
+        <!--~~~~~~~~~~~~~~The home screen~~~~~~~~~~~~~~~-->
+
+        <!--Booleans-->
+        <bool name="HOME_CLOCK_DRAW_NUMERALS">true</bool>
+        <bool name="HOME_CLOCK_CAN_COLOR">true</bool>
+
+        <!--Drawables-->
+        <background name="HOME_CLOCK_BACKGROUND">@drawable/clock_background</background>
+        <background name="HOME_CLOCK_CENTER">@drawable/clock_center</background>
+        <background name="HOME_CLOCK_MINUTE_HAND">@drawable/clock_minute_hand</background>
+        <background name="HOME_CLOCK_HOUR_HAND">@drawable/clock_hour_hand</background>
+
+        <!--~~~~~~~~~~~~~~~~~~~Dock~~~~~~~~~~~~~~~~~~~~~-->
+
+        <!--Drawables-->
+        <background name="DOCK_BACKGROUND_LEFT">@drawable/theme_dark_dock_background_left</background>
+        <background name="DOCK_BACKGROUND_RIGHT">@drawable/theme_dark_dock_background_right</background>
+        <background name="DOCK_ENTRY_BACKGROUND">@drawable/theme_dark_dock_entry</background>
+        <background name="DOCK_ALL_APPS_ICON">@drawable/theme_dark_dock_all_apps</background>
+
+        <!--~~~~~~~~The all applications screen~~~~~~~~-->
+
+        <!--Colors-->
+        <color name="APP_LIST_INDEX_BAR_ACTIVE_TEXT_COLOR">@color/theme_light_primary_text</color>
+        <color name="APP_LIST_INDEX_BAR_INACTIVE_TEXT_COLOR">@color/theme_light_secondary_text</color>
+        <color name="APP_LIST_INDEX_HINT_TEXT_COLOR">@color/theme_light_primary_text</color>
+
+        <!--Drawables-->
+        <background name="APP_LIST_INDEXER">@drawable/theme_dark_indexer</background>
+        <background name="APP_LIST_INDEXER_SELECTION">@drawable/theme_dark_indexer_selection</background>
+        <background name="APP_LIST_INDEXER_HINT">@drawable/theme_dark_indexer_hint</background>
+
+        <!--~~~~~~~~~~~~~Favorites Screen~~~~~~~~~~~~~~-->
+
+        <!--Icons-->
+        <icon name="ICON_FAVORITES_CONTACT">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_FAVORITES_CALL">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_FAVORITES_MESSAGE">@color/theme_dark_icon_color</icon>
+
+        <!--Drawables-->
+        <background name="CONTACT_SELECT_BACKGROUND">@drawable/theme_dark_grid_entry</background>
+
+        <!--~~~~~~~~~~~~~~~~~~~Desktops~~~~~~~~~~~~~~~~~~~-->
+
+        <!--Colors-->
+        <color name="DESKTOP_DROP_HINT">@color/theme_light_primary_text</color>
+        <color name="DESKTOP_SCALE_HANDLES">@color/theme_light_primary_text</color>
+        <color name="DESKTOP_TEXT">@color/theme_light_primary_text</color>
+
+        <!--Drawables-->
+        <background name="DESKTOP_LEFT_SCREEN">@drawable/theme_all_board_left_screen</background>
+        <background name="DESKTOP_RIGHT_SCREEN">@drawable/theme_all_board_right_screen</background>
+        <background name="DESKTOP_ITEM_BACKGROUND">@drawable/theme_dark_grid_entry</background>
+
+        <!--~~~~~~~~~~~~~~~Search Screen~~~~~~~~~~~~~~~-->
+
+        <!--Icons-->
+        <icon name="ICON_SEARCH_RESULT_CONTACT">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_SETTING">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_CALCULATOR">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_RECENT">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_WEB">@color/theme_dark_icon_color</icon>
+
+        <!--~~~~~~~~~~~~~~~Search bar~~~~~~~~~~~~~~~~~~-->
+
+        <!--Dimensions-->
+        <dimen name="SEARCH_BAR_VERTICAL_BORDER">0dp</dimen>
+        <dimen name="SEARCH_BAR_HORIZONTAL_BORDER">0dp</dimen>
+
+        <!--Colors-->
+        <color name="SEARCH_BAR_TEXT">@color/theme_light_primary_text</color>
+        <color name="SEARCH_BAR_TEXT_HINT">@color/theme_light_secondary_text</color>
+        <color name="SEARCH_BAR_TEXT_HIGHLIGHT">@color/theme_dark_text_highlight</color>
+        <color name="SEARCH_BAR_TEXT_HANDLE">@color/theme_dark_text_handle</color>
+
+        <!--Icons-->
+        <icon name="ICON_SEARCH">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SEARCH_ABORT">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SEARCH_VOICE">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SEARCH_RESET">@color/theme_dark_icon_color</icon>
+
+        <!--Drawables-->
+        <background name="SEARCH_BAR_BACKGROUND">@drawable/theme_dark_search_bar</background>
+
+        <!--~~~~~~~~~~~~~~~~~~Folders~~~~~~~~~~~~~~~~~~-->
+
+        <!--Colors-->
+        <color name="FOLDER_NAME_TEXT">@color/theme_light_primary_text</color>
+        <color name="FOLDER_NAME_HIGHLIGHT">@color/theme_dark_text_highlight</color>
+        <color name="FOLDER_NAME_HANDLE">@color/theme_dark_text_handle</color>
+        <color name="FOLDER_ITEM_TEXT">@color/theme_light_primary_text</color>
+        <color name="FOLDER_DEFAULT_BACKGROUND_COLOR">@color/theme_dark_element</color>
+
+        <!--Icons-->
+        <icon name="ICON_FOLDER_SORT">@color/theme_dark_icon_color</icon>
+
+        <!--Drawables-->
+        <background name="FOLDER_BACKGROUND">@drawable/theme_dark_folder_background</background>
+        <background name="FOLDER_ITEM_BACKGROUND">@drawable/theme_dark_folder_entry</background>
+        <background name="FOLDER_SORT_BACKGROUND">@drawable/theme_dark_grid_entry</background>
+
+        <!--~~~~~~~~~~~~~~~~Context Menus~~~~~~~~~~~~~~~~-->
+
+        <!--Icons-->
+        <icon name="ICON_POPUP_INFO">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_POPUP_EDIT">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_POPUP_REMOVE">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_POPUP_WALLPAPER">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_POPUP_SETTINGS">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_POPUP_WIDGETS">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_POPUP_PIN">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_POPUP_UNPIN">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_POPUP_SCALE">@color/theme_dark_icon_color</icon>
+
+        <!--Colors-->
+        <color name="POPUP_ITEM_TEXT_COLOR">@color/theme_light_primary_text</color>
+
+        <!--Drawables-->
+        <background name="POPUP_BACKGROUND">@drawable/theme_dark_popup_background</background>
+        <background name="POPUP_ITEM_BACKGROUND">@drawable/theme_dark_popup_item</background>
+        <background name="POPUP_DIVIDER">@color/theme_dark_popup_divider</background>
+
+        <!--~~~~~~~~~~~~~~~~~~Dialogs~~~~~~~~~~~~~~~~~~-->
+
+        <!--Icons-->
+        <icon name="ICON_HIDE">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SHOW">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_RESET">@color/theme_dark_icon_color</icon>
+
+        <!--Colors-->
+        <color name="DIALOG_DIVIDER">@color/theme_dark_dialog_divider</color>
+        <color name="DIALOG_TEXT_TITLE_COLOR">@color/theme_light_primary_text</color>
+        <color name="DIALOG_TEXT_PRIMARY_COLOR">@color/theme_light_primary_text</color>
+        <color name="DIALOG_TEXT_SECONDARY_COLOR">@color/theme_light_primary_text</color>
+        <color name="DIALOG_TEXT_HIGHLIGHT">@color/theme_dark_text_highlight</color>
+        <color name="DIALOG_TEXT_HANDLE">@color/theme_dark_text_handle</color>
+        <color name="DIALOG_LICENSE_BACKGROUND">@color/theme_dark_dialog_license_background</color>
+        <color name="DIALOG_TEXT_HEADER_COLOR">@color/theme_light_primary_text</color>
+        <color name="DIALOG_TEXT_BUTTON_COLOR">@color/theme_light_primary_text</color>
+        <color name="DIALOG_ICON_SHAPE_COLOR">@color/theme_light_primary_text</color>
+        <color name="DIALOG_ICON_COLOR_SELECTED">@color/theme_dark_dialog_icon_selected</color>
+        <color name="DIALOG_SCROLL_BAR">@color/theme_light_secondary_text</color>
+
+        <!--Drawables-->
+        <background name="DIALOG_TITLE_TOOLBAR">@drawable/theme_dark_dialog_title</background>
+        <background name="DIALOG_BACKGROUND">@color/theme_dark_dialog_background</background>
+        <background name="DIALOG_BUTTON">@drawable/theme_dark_dialog_button</background>
+        <background name="DIALOG_CONTENT_BUTTON">@drawable/theme_dark_dialog_button_content</background>
+        <background name="DIALOG_SELECTABLE_ITEM">@drawable/theme_dark_dialog_item</background>
+        <background name="DIALOG_SELECTABLE_ICON">@drawable/theme_dark_dialog_icon_entry</background>
+        <background name="DIALOG_HEADER">@drawable/theme_dark_dialog_header</background>
+        <background name="DIALOG_LISTENING_PULSE">@drawable/theme_dark_listening_pulse</background>
+        <background name="DIALOG_LISTENING">@drawable/theme_dark_listening</background>
+
+        <!--~~~~~~~~~~~~~~~~~Settings~~~~~~~~~~~~~~~~~~-->
+
+        <!--Colors-->
+        <color name="TOOLBAR_TEXT_COLOR">@color/theme_light_primary_text</color>
+        <color name="SETTINGS_TEXT_CATEGORY_COLOR">@color/theme_light_primary_text</color>
+        <color name="SETTINGS_TEXT_TITLE_COLOR">@color/theme_light_primary_text</color>
+        <color name="SETTINGS_TEXT_SETTING_COLOR">@color/theme_light_primary_text</color>
+        <color name="SETTINGS_TEXT_SETTING_VALUE_COLOR">@color/theme_light_secondary_text</color>
+        <color name="SETTINGS_DIVIDER">@color/theme_dark_settings_divider</color>
+        <color name="SETTINGS_ICON_COLOR">@color/theme_light_primary_text</color>
+        <color name="SETTINGS_SCROLL_BAR">@color/theme_light_primary_text</color>
+        <color name="SETTINGS_BACKGROUND_WARNING">#FFBf4343</color>
+        <color name="SETTINGS_TAB_TEXT_COLOR_ACTIVE">@color/theme_light_primary_text</color>
+        <color name="SETTINGS_TAB_TEXT_COLOR_INACTIVE">@color/theme_dark_secondary_text</color>
+
+        <!--Icons-->
+        <icon name="ICON_SETTINGS_HOME">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_APPS">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_FAVORITES">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_SEARCH">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_DESKTOP">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_GENERAL">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_NOTIFICATIONS">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_FOLDER">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_APPEARANCE">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_GESTURES">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_HIDDEN_APPS">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_SAVE_AND_RESTORE">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_FEEDBACK">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_DATA_PROTECTION">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_LICENSES">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_VERSION">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_HOME_RESET">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_SHOW">@color/theme_dark_icon_color</icon>
+
+        <!--Drawables-->
+        <background name="SETTINGS_CLICKABLE_ITEM_BACKGROUND">@drawable/theme_dark_settings_item</background>
+        <background name="SETTINGS_CLICKABLE_MAIN_SETTING_BACKGROUND">@drawable/theme_dark_settings_item</background>
+        <background name="SETTINGS_BACKGROUND">@color/theme_dark_settings_background</background>
+        <background name="SETTINGS_MAIN_BACKGROUND">@color/theme_dark_settings_background</background>
+        <background name="SETTINGS_BACKGROUND_CATEGORY">@color/theme_dark_settings_category</background>
+        <background name="SETTINGS_TAB_BACKGROUND">@color/theme_dark_settings_tab_background</background>
+
+        <!--~~~~~~~~~~~~~~~~~~Controls~~~~~~~~~~~~~~~~~~~-->
+
+        <!--Drawables-->
+        <background name="CONTROL_WARNING_BUTTON">@drawable/theme_dark_control_button_warning</background>
+        <background name="CONTROL_BUTTON_SETTINGS">@drawable/theme_dark_settings_item</background>
+
+        <!--Colors-->
+        <color name="CONTROL_HIGHLIGHT_COLOR">@color/theme_dark_control_highlight</color>
+
+        <!--~~~~~~~~~~~~~~~~~~Miscellaneous~~~~~~~~~~~~~~~~~~~-->
+
+        <!--Booleans-->
+        <bool name="MAIN_DARK_NAVIGATION_BAR_ICONS">false</bool>
+        <bool name="MAIN_DARK_STATUS_BAR_ICONS">false</bool>
+        <bool name="SETTINGS_DARK_NAVIGATION_BAR_ICONS">false</bool>
+        <bool name="SETTINGS_DARK_STATUS_BAR_ICONS">false</bool>
+
+        <!--Drawables-->
+        <background name="BADGE_ICON">@drawable/theme_light_badge_icon</background>
+        <background name="APP_WIDGET_HEADER">@drawable/theme_dark_header</background>
+        <background name="APP_WIDGET_PREVIEW">@drawable/theme_dark_widget_preview</background>
+        <background name="DRAG_AND_DROP_SWITCH">@drawable/theme_dark_dnd_switch</background>
+        <background name="PAGE_INDICATOR_EMPTY">@drawable/theme_dark_page_indicator_inactive</background>
+        <background name="PAGE_INDICATOR_FILLING">@drawable/theme_dark_page_indicator_moving</background>
+        <background name="PAGE_INDICATOR_FULL">@drawable/theme_dark_page_indicator_active</background>
+        <background name="BACKGROUND">#60000000</background>
+        <background name="TOOLBAR">@color/theme_dark_settings_tab_background</background>
+        <background name="APP_FOLDER_SUGGEST">@drawable/theme_light_folder_suggest</background>
+
+        <!--Colors-->
+        <color name="DRAG_AND_DROP_HOVER">@color/theme_light_primary_text</color>
+        <color name="DRAG_AND_DROP_STANDARD">@color/theme_light_primary_text</color>
+        <color name="PLACEHOLDER_TEXT_COLOR">@color/theme_dark_placeholder</color>
+        <color name="SETTINGS_NAVIGATION_BAR_COLOR">@color/theme_nav_bar_color</color>
+        <color name="SETTINGS_STATUS_BAR_COLOR">@color/theme_dark_status_bar</color>
+        <color name="MAIN_NAVIGATION_BAR_COLOR">#00000000</color>
+        <color name="MAIN_STATUS_BAR_COLOR">@color/theme_dark_main_status_bar</color>
+        <color name="BADGE_ICON_DEFAULT_COLOR">#FF0c877a</color>
+        <color name="BADGE_TEXT_COLOR">#FF202020</color>
+        <color name="APP_WIDGET_TEXT">@color/theme_light_primary_text</color>
+        <color name="TOOLBAR_TEXT_COLOR">@color/theme_light_primary_text</color>
+
+        <!--Icons-->
+        <icon name="ICON_SWITCH_SCREEN">@color/theme_dark_primary_text</icon>
+    </theme>
+
+</resources>

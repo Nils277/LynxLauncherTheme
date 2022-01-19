@@ -170,7 +170,7 @@ class ThemeParser {
         fun getIcon(item: String?, context: Context, defaultIcon: Drawable?): Drawable? {
             if (item == null || defaultIcon == null ) {
                 Log.e("THEME ERROR", "Icon not defined")
-                return ColorDrawable(-0xff01)
+                return ColorDrawable(-0xff01) // equivalent to 0xFFFF00FF >____<
             }
 
             return if (item.startsWith("@drawable/")) {
@@ -178,7 +178,7 @@ class ThemeParser {
                 val id = context.resources.getIdentifier(name, "drawable", context.packageName)
                 if (id == 0) {
                     Log.e("THEME ERROR", "Not able to find icon for target: @drawable/$name")
-                    ColorDrawable(-0xff01)
+                    ColorDrawable(-0xff01) // equivalent to 0xFFFF00FF >____<
                 }
                 else {
                     ContextCompat.getDrawable(context, id)
@@ -388,7 +388,7 @@ class ThemeParser {
         @Suppress("DEPRECATION")
         private fun setColorFilter(drawable : Drawable, @ColorInt color : Int) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                drawable.colorFilter = BlendModeColorFilter(color, BlendMode.MULTIPLY)
+                drawable.colorFilter = BlendModeColorFilter(color, BlendMode.SRC_ATOP)
             }
             else {
                 drawable.setColorFilter(color, PorterDuff.Mode.MULTIPLY)

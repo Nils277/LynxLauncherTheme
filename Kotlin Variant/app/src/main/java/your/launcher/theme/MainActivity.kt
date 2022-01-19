@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     //region Members
 
-    private val sDEBUG = true
+    private val sDEBUG = false
 
     //endregion
 

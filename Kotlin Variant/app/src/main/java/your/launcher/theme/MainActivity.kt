@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     //region Value Properties
     //------------------------------------------------
 
-    private val sDEBUG = true
+    private val sDEBUG = false
 
     //endregion
 

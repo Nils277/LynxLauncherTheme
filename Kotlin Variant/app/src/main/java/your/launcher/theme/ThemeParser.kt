@@ -30,9 +30,8 @@ import android.util.TypedValue
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import org.xmlpull.v1.XmlPullParser
-import java.lang.Exception
-import java.lang.StringBuilder
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * This class parses the themes and retrieves the drawable, icon, color, dimension or boolean resources
@@ -42,57 +41,42 @@ import java.util.*
 class ThemeParser {
 
     //region Public Methods
+    //------------------------------------------------
 
     companion object {
+
+        // Color returns when there was an error (its PINK!!!)
+        private val mErrorColor = Color.parseColor("#FFFF00FF")
+
         /**
-         * Parse all themes defined in the themes.xml file
-         * @param context The context of the application
-         * @return The list of all themes that were parsed
+         * Parse all themes defined in the themes.xml file and returns all successfully created
+         * themes. This method requires a [context] for parsing the xml file
          */
+        @JvmStatic
         fun parseThemes(context: Context): ArrayList<Theme> {
             val themes = ArrayList<Theme>()
             try {
                 val xmlPullParser: XmlPullParser = context.resources.getXml(R.xml.themes)
-
-                //Get the event type of the xmlParser
                 var eventType = xmlPullParser.eventType
 
                 //Load until the end of the xml is reached
                 while (eventType != XmlPullParser.END_DOCUMENT) {
                     //If we have a start tag
-                    if (eventType == XmlPullParser.START_TAG) {
+                    if (eventType == XmlPullParser.START_TAG && xmlPullParser.name == "theme") {
+                        val theme = Theme() //create a new theme
 
-                        //change depending on the name of the xml tag
-                        if (xmlPullParser.name == "theme") {
-                            val theme = Theme()
+                        //get the attributes from the theme
+                        parseAttributes(context, xmlPullParser, theme)
+                        eventType = xmlPullParser.next()
 
-                            //get the attributes from the theme
-                            //---------------------------------
-                            val attributeCount = xmlPullParser.attributeCount
-                            for (i in 0 until attributeCount) {
-                                //when we have found the title
-                                when {
-                                    xmlPullParser.getAttributeName(i).startsWith("title") -> {
-                                        theme.name = getString(xmlPullParser.getAttributeValue(i), context)
-                                    }
-                                    xmlPullParser.getAttributeName(i).startsWith("mode") -> {
-                                        theme.isDark = xmlPullParser.getAttributeValue(i)
-                                            .lowercase(Locale.getDefault()) == "dark"
-                                    }
-                                    xmlPullParser.getAttributeName(i).startsWith("wallpaper") -> {
-                                        theme.hasWallpaper = true
-                                    }
-                                }
+                        //parse all the data of the theme
+                        while (eventType != XmlPullParser.END_TAG) {
+                            if (eventType == XmlPullParser.START_TAG) {
+                                parseThemeData(xmlPullParser, theme, eventType, context, xmlPullParser.name)
                             }
                             eventType = xmlPullParser.next()
-                            while (eventType != XmlPullParser.END_TAG) {
-                                if (eventType == XmlPullParser.START_TAG) {
-                                    parseThemeData(xmlPullParser, theme, eventType, context, xmlPullParser.name)
-                                }
-                                eventType = xmlPullParser.next()
-                            }
-                            themes.add(theme)
                         }
+                        themes.add(theme)
                     }
                     eventType = xmlPullParser.next()
                 }
@@ -102,40 +86,24 @@ class ThemeParser {
             return themes
         }
 
-
         /**
-         * Get the background of an item
-         * @param item The string for the item
-         * @param context The context of the application
-         * @param optional When true, this background is allowed to be null
-         * @return The background or null of not available and optional
+         * Get the background of an [item]. When the [optional] parameter is set to true,
+         * this method can also return a null value, else it is assured to not be null.
+         * When [removeMask] is set to true, all sub-drawables that are masks are removed.
          */
-        fun getBackground(item: String?, context: Context, optional: Boolean): Drawable? {
-            return getBackground(item, context, optional, false)
-        }
-
-        /**
-         * Get the background of an item
-         * @param item The string for the item
-         * @param context The context of the application
-         * @param optional When true, this background is allowed to be null
-         * @param removeMask When true, the layout with the ID "android.R.id.mask" are removed
-         * @return The background or null of not available and optional
-         */
-        fun getBackground(item: String?, context: Context, optional: Boolean, removeMask: Boolean): Drawable? {
-            if (item == null) {
-                if (optional) {
-                    return null
-                }
-                Log.e("THEME ERROR", "Drawable not defined")
-                return ColorDrawable(-0xff01)
-            }
-            return if (item.startsWith("@drawable/")) {
+        @JvmStatic
+        fun getBackground(item: String?,
+                          context: Context,
+                          optional: Boolean = true,
+                          removeMask: Boolean = false): Drawable? {
+            return if (item == null) {
+                if (optional) null else ColorDrawable(mErrorColor)
+            } else if (item.startsWith("@drawable/")) {
                 val name = item.substring(10)
                 val id = context.resources.getIdentifier(name, "drawable", context.packageName)
                 if (id == 0) {
                     Log.e("THEME ERROR", "Not able to find drawable for target: @drawable/$name")
-                    ColorDrawable(-0xff01)
+                    ColorDrawable(mErrorColor)
                 } else {
                     val drawable = ContextCompat.getDrawable(context, id)
                     if (drawable is LayerDrawable && removeMask) {
@@ -148,17 +116,9 @@ class ThemeParser {
             }
         }
 
-        /**
-         * Get the color for an item
-         * @param color The color name of the item
-         * @return The color
-         */
-        fun getColor(color: Int?): Int {
-            if (color == null) {
-                return Color.parseColor("#FFFF00FF")
-            }
-            return color
-        }
+        /** returns the [color] for an item, and the default color if it is null */
+        @JvmStatic
+        fun getColor(color: Int?) = color ?: mErrorColor
 
         /**
          * Get an icon for the theme
@@ -167,10 +127,11 @@ class ThemeParser {
          * @param defaultIcon The default icons for when the icons should just be colored
          * @return The icon for the theme
          */
+        @JvmStatic
         fun getIcon(item: String?, context: Context, defaultIcon: Drawable?): Drawable? {
             if (item == null || defaultIcon == null ) {
                 Log.e("THEME ERROR", "Icon not defined")
-                return ColorDrawable(-0xff01) // equivalent to 0xFFFF00FF >____<
+                return ColorDrawable(mErrorColor)
             }
 
             return if (item.startsWith("@drawable/")) {
@@ -178,7 +139,7 @@ class ThemeParser {
                 val id = context.resources.getIdentifier(name, "drawable", context.packageName)
                 if (id == 0) {
                     Log.e("THEME ERROR", "Not able to find icon for target: @drawable/$name")
-                    ColorDrawable(-0xff01) // equivalent to 0xFFFF00FF >____<
+                    ColorDrawable(mErrorColor)
                 }
                 else {
                     ContextCompat.getDrawable(context, id)
@@ -193,199 +154,169 @@ class ThemeParser {
         //endregion
 
         //region Private Methods
-        /**
-         * Get the color from the resources
-         * @param colorString The name for the color resource
-         * @param context The context of the application
-         * @return The color. A pink color of the color was not found or not correctly defined
-         */
-        private fun getResourceColor(colorString: String, context: Context): Int {
-            var name = colorString
-            var color = -0xff01
+        //------------------------------------------------
 
-            //a color resource
-            if (name.startsWith("@color/")) {
-                name = name.substring(7)
-                val resourceID = context.resources.getIdentifier(name, "color", context.packageName)
+        /**
+         * Parse all the attributes for a [theme] using the given [xmlPullParser].
+         * This method required a [context] to parse the data
+         */
+        @JvmStatic
+        private fun parseAttributes(context: Context, xmlPullParser: XmlPullParser, theme: Theme) {
+            val attributeCount = xmlPullParser.attributeCount
+            for (i in 0 until attributeCount) {
+                //when we have found the title
+                val attributeName = xmlPullParser.getAttributeName(i)
+                when {
+                    attributeName.startsWith("title") -> {
+                        theme.name = getString(xmlPullParser.getAttributeValue(i), context)
+                    }
+                    attributeName.startsWith("mode") -> {
+                        theme.isDark = xmlPullParser.getAttributeValue(i)
+                            .lowercase(Locale.getDefault()) == "dark"
+                    }
+                    attributeName.startsWith("wallpaper") -> {
+                        theme.hasWallpaper = true
+                    }
+                }
+            }
+        }
+
+        /**
+         * Returns the color from the resources for a given [colorString].
+         * This method requires a [context] to parse the color
+         */
+        @JvmStatic
+        private fun getResourceColor(colorString: String, context: Context): Int {
+            // a color resource
+            if (colorString.startsWith("@color/")) {
+                val resourceID = context.resources.getIdentifier(colorString.substring(7),
+                    "color", context.packageName)
                 if (resourceID != 0) {
                     try {
-                        color = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            context.resources.getColor(resourceID, null)
-                        }
-                        else {
-                            ContextCompat.getColor(context, resourceID)
-                        }
+                        return ContextCompat.getColor(context, resourceID)
+                    } catch (e: Exception) {
+                        Log.e("THEME ERROR", "Not able to find color for target: $colorString")
                     }
-                    catch (e: Exception) {
-                        Log.e("THEME ERROR", "Not able to find color for target: @color/$name")
-                    }
+                } else {
+                    Log.e("THEME ERROR", "No resource found for target: $colorString")
                 }
-                else {
-                    Log.e("THEME ERROR", "No resource found for target: @color/$name")
+            } else {  // a string describing a color
+                var colorName = colorString
+                // when the color string begins with a hash sign, remove it
+                if (colorName.startsWith("#")) {
+                    colorName = colorString.substring(1)
                 }
-            }
-            else {
-                val original = name
-                if (name.startsWith("#")) {
-                    name = name.substring(1)
-                }
-                if (name.length == 3 || name.length == 4) {
+
+                // when the short form os the color definition is used, replace it with the long one
+                if (colorName.length == 3 || colorName.length == 4) {
                     val result = StringBuilder()
-                    for (i in name.indices) {
-                        result.append(name.substring(i, i))
-                        result.append(name.substring(i, i))
+                    for (ch in colorName) {
+                        result.append(ch).append(ch)
                     }
-                    name = result.toString()
+                    colorName = result.toString()
                 }
 
-                //when the string does not have an alpha value, add it
-                if (name.length == 6) {
-                    name = "FF$name"
-                }
-                if (name.length == 8) {
+                // when the length of th string name is valid
+                if (colorName.length == 6 || colorName.length == 8) {
                     try {
-                        color = (java.lang.Long.valueOf(name, 16) as Long).toInt()
+                        return Color.parseColor("#$colorName")
+                    } catch (e: Exception) {
+                        Log.e("THEME ERROR", "Not able to parse color for target: $colorString")
                     }
-                    catch (e: Exception) {
-                        //invalid color nothing to do here
-                        e.printStackTrace()
-                        Log.e("THEME ERROR", "Not able to parse color for target: $original")
-                    }
-                }
-                else {
-                    Log.e("THEME ERROR", "Invalid color definition for target: $original")
+                } else {
+                    Log.e("THEME ERROR", "Invalid color definition for target: $colorString")
                 }
             }
-            return color
+            return mErrorColor
         }
 
         /**
-         * Get a string from the resources
-         * @param string The name for the string resource
-         * @param context The context of the application
-         * @return The string
+         * Returns a string from the resources for the given [stringName] of the string.
+         * This method requires the a [context] to parse the dimension
          */
-        private fun getString(string: String, context: Context): String {
-            var name = string
-            if (name.startsWith("@string/")) {
-                name = name.substring(8)
-                val stringID = context.resources.getIdentifier(name, "string", context.packageName)
-                try {
-                    return context.resources.getString(stringID)
-                }
-                catch (e: Exception) {
-                    //invalid color nothing to do here
-                    Log.e("THEME ERROR", "Not able to find string for target: @string/$name")
-                }
+        @JvmStatic
+        private fun getString(stringName: String, context: Context): String {
+            var stringID = 0
+            if (stringName.startsWith("@string/")) {
+                stringID = context.resources.getIdentifier(stringName.substring(8), "string", context.packageName)
             }
-            else if (name.startsWith("@")) {
-                val stringID = name.substring(1).toInt()
-                try {
-                    return context.resources.getString(stringID)
-                } catch (e: Exception) {
-                    //invalid color nothing to do here
-                    Log.e("THEME ERROR", "Not able to find string for target: @string/$name")
-                }
+            else if (stringName.startsWith("@")) {
+                stringID = stringName.substring(1).toInt()
             }
-            return name
+
+            try {
+                return context.resources.getString(stringID)
+            }
+            catch (e: Exception) {
+                //invalid string nothing to do here
+                Log.e("THEME ERROR", "Not able to find string for target: $stringName")
+            }
+            return stringName
         }
 
         /**
-         * Get a dimension from the resources
-         * @param dimensionString The string for the dimension resource
-         * @param context The context of the application
-         * @return The dimension
+         * Returns the dimension in pixels for the given [dimensionString].
+         * This method requires the a [context] to parse the dimension
          */
+        @JvmStatic
         private fun getDimen(dimensionString: String, context: Context): Int {
-            var name = dimensionString
-            if (name.startsWith("@dimen/")) {
-                name = name.substring(7)
-                val resourceID = context.resources.getIdentifier(name, "dimen", context.packageName)
+            if (dimensionString.startsWith("@dimen/")) {
+                val resourceID = context.resources.getIdentifier(dimensionString.substring(7), "dimen", context.packageName)
                 try {
                     return context.resources.getDimension(resourceID).toInt()
-                }
-                catch (e: Exception) {
-                    Log.e("THEME ERROR", "Not able to find boolean for target: @dimen/$name")
+                } catch (e: Exception) {
+                    Log.e("THEME ERROR", "Not able to find boolean for target: $dimensionString")
                 }
             }
             else {
-                var typedValue = 0
-                val value = name
-                val newString = name.substring(0, name.length - 2)
-                when {
-                    name.endsWith("dp") -> {
-                        typedValue = TypedValue.COMPLEX_UNIT_DIP
-                        name = newString
+                var valueString = dimensionString.substring(0, dimensionString.length - 2)
+                val typedValue = when {
+                    dimensionString.endsWith("dp") -> TypedValue.COMPLEX_UNIT_DIP
+                    dimensionString.endsWith("pt") -> TypedValue.COMPLEX_UNIT_PT
+                    dimensionString.endsWith("sp") -> TypedValue.COMPLEX_UNIT_SP
+                    dimensionString.endsWith("in") -> TypedValue.COMPLEX_UNIT_IN
+                    dimensionString.endsWith("mm") -> TypedValue.COMPLEX_UNIT_MM
+                    dimensionString.endsWith("dip") -> {
+                        valueString = valueString.substring(0, valueString.length - 1)
+                        TypedValue.COMPLEX_UNIT_DIP
                     }
-                    name.endsWith("dip") -> {
-                        typedValue = TypedValue.COMPLEX_UNIT_DIP
-                        name = name.substring(0, name.length - 3)
-                    }
-                    name.endsWith("pt") -> {
-                        typedValue = TypedValue.COMPLEX_UNIT_PT
-                        name = newString
-                    }
-                    name.endsWith("sp") -> {
-                        typedValue = TypedValue.COMPLEX_UNIT_SP
-                        name = newString
-                    }
-                    name.endsWith("in") -> {
-                        typedValue = TypedValue.COMPLEX_UNIT_IN
-                        name = newString
-                    }
-                    name.endsWith("mm") -> {
-                        typedValue = TypedValue.COMPLEX_UNIT_MM
-                        name = newString
-                    }
-                    name.endsWith("px") -> {
-                        name = newString
-                    }
+                    else -> TypedValue.COMPLEX_UNIT_PX
                 }
+
                 try {
-                    return TypedValue.applyDimension(typedValue, name.toInt().toFloat(),
+                    return TypedValue.applyDimension(typedValue, valueString.toFloat(),
                         context.resources.displayMetrics).toInt()
-                }
-                catch (e: Exception) {
-                    Log.e("THEME ERROR", "Invalid value definition for target: $value")
+                } catch (e: Exception) {
+                    Log.e("THEME ERROR", "Invalid value definition for target: $valueString")
                 }
             }
             return 0
         }
 
         /**
-         * Get a boolean from the resources
-         * @param booleanString The string for the boolean resource
-         * @param context The context of the application
-         * @return The boolean value
+         * Returns a boolean from the resources using the given [booleanString].
+         * This method requires a [context] to perform its operations
          */
+        @JvmStatic
         private fun getBoolean(booleanString: String, context: Context): Boolean {
-            var name = booleanString
-
-            if (name.startsWith("@bool/")) {
-                name = name.substring(6)
-                val id = context.resources.getIdentifier(name, "bool", context.packageName)
+            if (booleanString.startsWith("@bool/")) {
+                val id = context.resources.getIdentifier(booleanString.substring(6), "bool", context.packageName)
                 if (id != 0) {
                     try {
                         return context.resources.getBoolean(id)
-                    }
-                    catch (ignored: Exception) {}
+                    } catch (ignored: Exception) {}
+                } else {
+                    Log.e("THEME ERROR", "Not able to find boolean for target: $booleanString")
                 }
-                else {
-                    Log.e("THEME ERROR", "Not able to find boolean for target: @bool/$name")
-                }
-            }
-            else {
-                return name.lowercase(Locale.getDefault()) == "true"
+            } else {
+                return booleanString.lowercase(Locale.getDefault()) == "true"
             }
             return false
         }
 
-        /**
-         * Set a color filter for the drawable
-         * @param drawable The drawable to set the color filter for
-         * @param color The color to set
-         */
+        /** Add a color filter with a given [color] the the [drawable] */
         @Suppress("DEPRECATION")
+        @JvmStatic
         private fun setColorFilter(drawable : Drawable, @ColorInt color : Int) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 drawable.colorFilter = BlendModeColorFilter(color, BlendMode.SRC_ATOP)
@@ -396,52 +327,45 @@ class ThemeParser {
         }
 
         /**
-         * Parse one data sample for the theme
-         * @param xmlPullParser The reader for the xml
-         * @param theme The theme to load the data for
-         * @param event The current type of input event
-         * @param context The context of the application
+         * Parse one data sample for the given [theme] using the given [xmlPullParser].
+         * The given [event] holds the current type of data in the XML.
+         * This method requires a [context] to perform its operations
          */
+        @JvmStatic
         private fun parseThemeData(xmlPullParser : XmlPullParser, theme : Theme,
                                     event : Int, context : Context, type : String) : Int {
-            var i = 0
             var eventType = event
-            val attributeCount = xmlPullParser.attributeCount
             var valid = false
 
-            while (i in 0 until attributeCount) {
+            val attributeCount = xmlPullParser.attributeCount
+            for (i in 0 until attributeCount) {
                 if (xmlPullParser.getAttributeName(i).startsWith("name")) {
                     val themeItemName = xmlPullParser.getAttributeValue(i)
                     eventType = xmlPullParser.next()
                     if (eventType == XmlPullParser.TEXT) {
                         valid = addToTheme(type, themeItemName, xmlPullParser.text, theme, context)
-                        eventType = xmlPullParser.next()
 
-                        while (eventType != XmlPullParser.END_TAG) {
-                            eventType = xmlPullParser.next()
-                        }
+                        do{ eventType = xmlPullParser.next()
+                        } while (eventType != XmlPullParser.END_TAG)
                     }
                 }
-                i++
-            }
-            if (!valid) {
-                eventType = xmlPullParser.next()
-                while (eventType != XmlPullParser.END_TAG) {
-                    eventType = xmlPullParser.next()
-                }
             }
 
+            if (!valid) {
+                do{ eventType = xmlPullParser.next()
+                } while (eventType != XmlPullParser.END_TAG)
+            }
             return eventType
         }
 
         /**
-         * Add the retrieved data to the theme
-         * @param type The type of the data
-         * @param name The name to save the data for
-         * @param data The string representing the data
-         * @param theme The theme to add the data into
-         * @param context the context of the application
+         * Add the retrieved data to the theme.
+         * [type] is the type of the resource, [name] the name of the resource and
+         * [data] describes the data as a string.
+         * The retrieved colors, drawables etc. will be added to the given [theme].
+         * This method requires a [context] for its operations.
          */
+        @JvmStatic
         private fun addToTheme(type : String, name : String, data : String,
                                theme : Theme, context: Context) : Boolean {
             when (type) {

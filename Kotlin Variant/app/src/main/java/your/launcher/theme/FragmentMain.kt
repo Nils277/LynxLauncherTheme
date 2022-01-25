@@ -37,16 +37,18 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 class FragmentMain : Fragment(), FragmentTheme {
 
     //region Members
+    //------------------------------------------------
 
     // The theme
     private var mTheme: Theme? = null
 
     // Holds the checkbox
-    private var mCheckBox: CheckBox? = null
+    private lateinit var mCheckBox: CheckBox
 
     //endregion
 
     //region Public Methods
+    //------------------------------------------------
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -56,48 +58,37 @@ class FragmentMain : Fragment(), FragmentTheme {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
         mCheckBox = view.findViewById(R.id.checkBox)
-        applyTheme(context, view)
+        applyTheme(requireContext(), view)
 
         return view
     }
 
     /**
-     * Set the dark mode of the view
-     * @param context The context of the application
-     * @param theme The new theme
+     * Set the [theme] used for a fragment. Requires the [context] of the application
      */
-    override fun setTheme(context: Context?, theme: Theme?) {
+    override fun setTheme(context: Context, theme: Theme?) {
         if (mTheme != theme) {
             mTheme = theme
-            applyTheme(context, view)
+            applyTheme(requireContext(), view ?: return)
         }
     }
 
     /**
-     * Get whether the theme icon of the launcher should be hidden after the theme is applied
-     * @return When the the theme should be hidden, else false
+     * This method returns if the theme icon of the launcher should
+     * be hidden after the theme is applied
      */
-    override fun hideAfterApply(): Boolean {
-        return mCheckBox?.isChecked ?: false
-    }
+    override fun hideAfterApply() = mCheckBox.isChecked
 
     //endregion
 
     //region Private Methods
-
-    /**
-     * Apply the theme to the
-     * @param context The context of the application
-     */
-    private fun applyTheme(context: Context?, view: View?) {
-        val theme = mTheme
-        val checkBox = mCheckBox
-        if (context == null || view == null || theme == null || checkBox == null) {
-            return
-        }
+    //------------------------------------------------
+    /** Apply the theme to the [view]. The [context] of the application is required */
+    private fun applyTheme(context: Context, view: View) {
+        val theme = mTheme ?: return
 
         //The main background
-        view.background = ThemeParser.getBackground(theme.backgrounds["SETTINGS_BACKGROUND"], context, false)
+        view.background = ThemeParser.getBackground(theme.backgrounds[SETTINGS_BACKGROUND], context, false)
 
         //The preview
         val imageView = view.findViewById<ImageView>(R.id.theme_preview)
@@ -106,19 +97,18 @@ class FragmentMain : Fragment(), FragmentTheme {
 
         //The text color
         val textView = view.findViewById<TextView>(R.id.theme_text)
-        textView.setTextColor(ThemeParser.getColor(theme.colors["SETTINGS_TEXT_SETTING_COLOR"]))
+        textView.setTextColor(ThemeParser.getColor(theme.colors[SETTINGS_TEXT_SETTING_COLOR]))
 
         //The button
         val button: ExtendedFloatingActionButton = view.findViewById(R.id.floatingActionButton)
-        button.setTextColor(-0xf0f10)
-        button.iconTint = ColorStateList.valueOf(-0xf0f10)
-        checkBox.setTextColor(ThemeParser.getColor(theme.colors["SETTINGS_TEXT_SETTING_COLOR"]))
+        button.setTextColor(-0x0f0f10)
+        button.iconTint = ColorStateList.valueOf(-0x0f0f10)
+        mCheckBox.setTextColor(ThemeParser.getColor(theme.colors[SETTINGS_TEXT_SETTING_COLOR]))
 
-        drawable = ThemeParser.getBackground(theme.backgrounds["CONTROL_CHECKBOX"], context, true)
+        drawable = ThemeParser.getBackground(theme.backgrounds[CONTROL_CHECKBOX], context, true)
         if (drawable != null) {
-            checkBox.buttonDrawable = drawable
-        }
-        else {
+            mCheckBox.buttonDrawable = drawable
+        } else {
             val checkStates = ColorStateList(
                 arrayOf(
                     intArrayOf(-android.R.attr.state_enabled),
@@ -128,16 +118,15 @@ class FragmentMain : Fragment(), FragmentTheme {
                 intArrayOf(
                     ContextCompat.getColor(context, if (theme.isDark) R.color.theme_dark_elem_disabled
                         else R.color.theme_light_elem_disabled),
-                    ThemeParser.getColor(theme.colors["CONTROL_HIGHLIGHT_COLOR"]),
+                    ThemeParser.getColor(theme.colors[CONTROL_HIGHLIGHT_COLOR]),
                     ContextCompat.getColor(context, if (theme.isDark) R.color.theme_dark_elem_default
                         else R.color.theme_light_elem_disabled),
                 )
             )
-            checkBox.buttonDrawable = CompoundButtonCompat.getButtonDrawable(CheckBox(context))
-            checkBox.buttonTintList = checkStates
+            mCheckBox.buttonDrawable = CompoundButtonCompat.getButtonDrawable(CheckBox(context))
+            mCheckBox.buttonTintList = checkStates
         }
     }
-
 
     //endregion
 }

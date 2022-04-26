@@ -90,7 +90,7 @@
         <!--~~~~~~~~~~~~~~~~~~~Desktops~~~~~~~~~~~~~~~~~~~-->
 
         <!--Colors-->
-        <color name="DESKTOP_DROP_HINT">@color/theme_light_primary_text</color>
+        <color name="DESKTOP_DROP_HINT">@color/theme_dim_white</color>
         <color name="DESKTOP_SCALE_HANDLES">@color/theme_light_primary_text</color>
         <color name="DESKTOP_TEXT">@color/theme_light_primary_text</color>
 
@@ -396,7 +396,7 @@
         <!--~~~~~~~~~~~~~~~~~~~Desktops~~~~~~~~~~~~~~~~~~~-->
 
         <!--Colors-->
-        <color name="DESKTOP_DROP_HINT">@color/theme_light_primary_text</color>
+        <color name="DESKTOP_DROP_HINT">@color/theme_dim_white</color>
         <color name="DESKTOP_SCALE_HANDLES">@color/theme_light_primary_text</color>
         <color name="DESKTOP_TEXT">@color/theme_light_primary_text</color>
 

@@ -26,6 +26,7 @@
 
     <!--~~~~~~~~~~~~~~~Both Themes~~~~~~~~~~~~~~~-->
     <color name="theme_nav_bar_color">#FF000000</color>
+    <color name="theme_dim_white">#60FFFFFF</color>
 
     <!--~~~~~~~~~~~~~~~Light Theme~~~~~~~~~~~~~~~-->
 

@@ -95,6 +95,14 @@ When true, the user can change the color of the analog clock. The color is added
 # Dock
 The dock is the bar, on the left or right side of the home screen which can house apps, shortcuts and folders.
 
+## Values
+
+**DOCK_VERT_BORDER_SIDES**
+The border on the sides of the dock, when it is placed at the bottom of the screen
+
+**DOCK_VERT_BORDER_BOTTOM**
+The border below the dock, when it is placed at the bottom of the screen
+
 ## Backgrounds
 
 **DOCK_BACKGROUND_LEFT**
@@ -216,23 +224,26 @@ The search screen shown the results of a search or previously used search result
 
 ## Icons
 
+**ICON_SEARCH_RESULT_APPS**
+Icon for the header of the app search results.
+
 **ICON_SEARCH_RESULT_CONTACT**
-Icon for the header of search results in the contacts.
+Icon for the header of contacts search results.
 
 **ICON_SEARCH_RESULT_SETTING**
-Icon for the header of search results in the settings.
+Icon for the header of settings search results.
 
 **ICON_SEARCH_RESULT_CALCULATOR**
-Icon for the header of search results for a mathematical result.
+Icon for the header of search results for a mathematical equation.
 
 **ICON_SEARCH_RESULT_RECENT**
-Icon for the header when the recently used search results are shown.
+Icon for the header when the recent search results are shown.
 
 **ICON_SEARCH_RESULT_WEB**
 Icon for the header for the online search options.
 
 **ICON_SEARCH_RESULT_SHORTCUTS**
-Icon for the header of search results in the shortcuts
+Icon for the header of shortcuts search results. 
 
 # Search bar
 The search bar is placed on top of most screens and can be used to start a fast search for apps, contacts etc.
@@ -275,6 +286,9 @@ Icon in the search bar to start a voice search.
 **ICON_SEARCH_RESET**
 Icon in the search bar to reset the current search query.
 
+**ICON_SEARCH_SELECT**
+Icon in the search bar to select or order the search results.
+
 ## Values
 
 **SEARCH_BAR_VERTICAL_BORDER**
@@ -288,6 +302,11 @@ Width of the margin to the left and right of the search bar.
 The management screen allows to change and alter the positions of the screens.
 The items for this screen are NOT optional but will be replaced with the default theme items when not defined for
 compatibility reasons
+
+## Booleans
+
+**MANAGE_DARK_NAVIGATION_BAR_ICONS**
+Holds whether the icons in the navigation bar should be dark or light. When set to true, the icons are dark.
 
 ## Backgrounds
 
@@ -503,7 +522,8 @@ Icon in the main context menu to disable the work profile if available.
 **ICON_POPUP_MANAGE_SCREENS**
 Icon in the main context menu to switch to the screen layout management screen.
 
-
+**ICON_UNINSTALL**
+Icon in the main context menu of an app, to uninstall said app.
 
 **ICON_UNINSTALL**
 Icon used on the applications screen to uninstall an application.
@@ -747,6 +767,13 @@ Icon in the main settings screen to reset the launcher on the smartphone and sel
 
 **ICON_SETTINGS_SHOW**
 Icon in the toolbar in the settings with the hidden apps to show the selected hidden apps again.
+
+**ICON_SETTINGS_INFO**
+Icon for the main settings to display information about the launcher
+
+**ICON_SETTINGS_HELP**
+Icon for the main settings to display options to get help or solve problems
+
 
 ## Booleans
 

@@ -19,7 +19,8 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <fragment android:name="your.launcher.theme.FragmentMain"
+    <androidx.fragment.app.FragmentContainerView
+        android:name="your.launcher.theme.FragmentMain"
         android:id="@+id/main_fragment"
         android:layout_weight="1"
         android:layout_width="match_parent"

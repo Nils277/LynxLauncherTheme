@@ -23,7 +23,8 @@
        bit different modes.
        You can also specify more than one theme in this xml
        -->
-    <theme title="@string/theme_name" mode="light" icon="ic_theme" preview="preview_dark" wallpaper="background">
+    <theme title="@string/theme_name" mode="light" icon="ic_theme" preview="preview_dark"
+        wallpaper="background" version="1">
 
         <!--~~~~~~~~~~~~~~Common screen items~~~~~~~~~~~~~~~-->
 
@@ -53,9 +54,14 @@
 
         <!--~~~~~~~~~~~~~~~~~~~Dock~~~~~~~~~~~~~~~~~~~~~-->
 
+        <!--Dimension-->
+        <dimen name="DOCK_VERT_BORDER_SIDES">0dp</dimen>
+        <dimen name="DOCK_VERT_BORDER_BOTTOM">0dp</dimen>
+
         <!--Drawables-->
         <background name="DOCK_BACKGROUND_LEFT">@drawable/theme_light_dock_background_left</background>
         <background name="DOCK_BACKGROUND_RIGHT">@drawable/theme_light_dock_background_right</background>
+        <background name="DOCK_BACKGROUND_BOTTOM">@drawable/theme_light_dock_background_bottom</background>
         <background name="DOCK_ENTRY_BACKGROUND">@drawable/theme_light_dock_entry</background>
         <background name="DOCK_ALL_APPS_ICON">@drawable/theme_light_dock_all_apps</background>
 
@@ -97,10 +103,43 @@
 
         <!--Icons-->
         <icon name="ICON_SEARCH_RESULT_CONTACT">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_APPS">@color/theme_light_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_SETTING">@color/theme_light_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_CALCULATOR">@color/theme_light_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_RECENT">@color/theme_light_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_WEB">@color/theme_light_icon_color</icon>
+
+        <!--~~~~~~~~~~~~~~~Manage Screen ~~~~~~~~~~~~~~~~~~-->
+
+        <!--Booleans-->
+        <bool name="MANAGE_DARK_NAVIGATION_BAR_ICONS">true</bool>
+
+        <!--Icons-->
+        <icon name="ICON_MANAGE_ONE_FINGER">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_TWO_FINGERS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_PRESETS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_INFINITE_SCROLL">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_MORE">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_ADVANCED">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_NORMAL">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_RESET">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_APPLY">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_HOME">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_APPS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_FAVORITES">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_DESKTOP">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_SEARCH">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_REMOVE">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_ADD">@color/theme_dark_icon_color</icon>
+
+        <!--Drawables-->
+        <background name="MANAGE_SHEET">@drawable/theme_light_management_sheet</background>
+        <background name="MANAGE_SCREEN">@drawable/theme_all_management_screen</background>
+        <background name="MANAGE_ACCEPT">@drawable/theme_all_management_accept</background>
+        <background name="MANAGE_ITEM">@drawable/theme_light_settings_item</background>
+        <background name="MANAGE_REMOVE">@drawable/theme_all_management_remove</background>
+        <background name="MANAGE_ADD">@drawable/theme_all_management_add</background>
+        <background name="MANAGE_EMPTY">@drawable/theme_all_management_empty</background>
 
         <!--~~~~~~~~~~~~~~~Search bar~~~~~~~~~~~~~~~~~~-->
 
@@ -119,6 +158,7 @@
         <icon name="ICON_SEARCH_ABORT">@color/theme_light_icon_color</icon>
         <icon name="ICON_SEARCH_VOICE">@color/theme_light_icon_color</icon>
         <icon name="ICON_SEARCH_RESET">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_SELECT">@color/theme_light_icon_color</icon>
 
         <!--Drawables-->
         <background name="SEARCH_BAR_BACKGROUND">@drawable/theme_light_search_bar</background>
@@ -152,6 +192,8 @@
         <icon name="ICON_POPUP_PIN">@color/theme_light_icon_color</icon>
         <icon name="ICON_POPUP_UNPIN">@color/theme_light_icon_color</icon>
         <icon name="ICON_POPUP_SCALE">@color/theme_light_icon_color</icon>
+        <icon name="ICON_POPUP_MANAGE_SCREENS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_UNINSTALL">@color/theme_light_icon_color</icon>
 
         <!--Colors-->
         <color name="POPUP_ITEM_TEXT_COLOR">@color/theme_dark_primary_text</color>
@@ -227,6 +269,9 @@
         <icon name="ICON_SETTINGS_VERSION">@color/theme_light_icon_color</icon>
         <icon name="ICON_SETTINGS_HOME_RESET">@color/theme_light_icon_color</icon>
         <icon name="ICON_SETTINGS_SHOW">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_DOCK">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_INFO">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SETTINGS_HELP">@color/theme_light_icon_color</icon>
 
         <!--Drawables-->
         <background name="SETTINGS_CLICKABLE_ITEM_BACKGROUND">@drawable/theme_light_settings_item</background>
@@ -283,7 +328,8 @@
 
     </theme>
 
-    <theme title="@string/theme_name" mode="dark" icon="ic_theme" preview="preview_dark" wallpaper="background">
+    <theme title="@string/theme_name" mode="dark" icon="ic_theme" preview="preview_dark"
+        wallpaper="background" version="1">
 
         <!--~~~~~~~~~~~~~~Common screen items~~~~~~~~~~~~~~~-->
 
@@ -313,9 +359,14 @@
 
         <!--~~~~~~~~~~~~~~~~~~~Dock~~~~~~~~~~~~~~~~~~~~~-->
 
+        <!--Dimension-->
+        <dimen name="DOCK_VERT_BORDER_SIDES">0dp</dimen>
+        <dimen name="DOCK_VERT_BORDER_BOTTOM">0dp</dimen>
+
         <!--Drawables-->
         <background name="DOCK_BACKGROUND_LEFT">@drawable/theme_dark_dock_background_left</background>
         <background name="DOCK_BACKGROUND_RIGHT">@drawable/theme_dark_dock_background_right</background>
+        <background name="DOCK_BACKGROUND_BOTTOM">@drawable/theme_dark_dock_background_bottom</background>
         <background name="DOCK_ENTRY_BACKGROUND">@drawable/theme_dark_dock_entry</background>
         <background name="DOCK_ALL_APPS_ICON">@drawable/theme_dark_dock_all_apps</background>
 
@@ -356,11 +407,44 @@
         <!--~~~~~~~~~~~~~~~Search Screen~~~~~~~~~~~~~~~-->
 
         <!--Icons-->
+        <icon name="ICON_SEARCH_RESULT_APPS">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_CONTACT">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_SETTING">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_CALCULATOR">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_RECENT">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_WEB">@color/theme_dark_icon_color</icon>
+
+        <!--~~~~~~~~~~~~~~~Manage Screen ~~~~~~~~~~~~~~~~~~-->
+
+        <!--Booleans-->
+        <bool name="MANAGE_DARK_NAVIGATION_BAR_ICONS">false</bool>
+
+        <!--Icons-->
+        <icon name="ICON_MANAGE_ONE_FINGER">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_TWO_FINGERS">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_PRESETS">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_INFINITE_SCROLL">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_MORE">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_ADVANCED">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_NORMAL">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_RESET">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_APPLY">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_HOME">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_APPS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_FAVORITES">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_DESKTOP">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_SEARCH">@color/theme_light_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_REMOVE">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_MANAGE_SCREEN_ADD">@color/theme_dark_icon_color</icon>
+
+        <!--Drawables-->
+        <background name="MANAGE_SHEET">@drawable/theme_dark_management_sheet</background>
+        <background name="MANAGE_SCREEN">@drawable/theme_all_management_screen</background>
+        <background name="MANAGE_ACCEPT">@drawable/theme_all_management_accept</background>
+        <background name="MANAGE_ITEM">@drawable/theme_dark_settings_item</background>
+        <background name="MANAGE_REMOVE">@drawable/theme_all_management_remove</background>
+        <background name="MANAGE_ADD">@drawable/theme_all_management_add</background>
+        <background name="MANAGE_EMPTY">@drawable/theme_all_management_empty</background>
 
         <!--~~~~~~~~~~~~~~~Search bar~~~~~~~~~~~~~~~~~~-->
 
@@ -379,6 +463,7 @@
         <icon name="ICON_SEARCH_ABORT">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SEARCH_VOICE">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SEARCH_RESET">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SEARCH_SELECT">@color/theme_dark_icon_color</icon>
 
         <!--Drawables-->
         <background name="SEARCH_BAR_BACKGROUND">@drawable/theme_dark_search_bar</background>
@@ -412,6 +497,8 @@
         <icon name="ICON_POPUP_PIN">@color/theme_dark_icon_color</icon>
         <icon name="ICON_POPUP_UNPIN">@color/theme_dark_icon_color</icon>
         <icon name="ICON_POPUP_SCALE">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_POPUP_MANAGE_SCREENS">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_UNINSTALL">@color/theme_dark_icon_color</icon>
 
         <!--Colors-->
         <color name="POPUP_ITEM_TEXT_COLOR">@color/theme_light_primary_text</color>
@@ -487,6 +574,9 @@
         <icon name="ICON_SETTINGS_VERSION">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SETTINGS_HOME_RESET">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SETTINGS_SHOW">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_DOCK">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_INFO">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SETTINGS_HELP">@color/theme_dark_icon_color</icon>
 
         <!--Drawables-->
         <background name="SETTINGS_CLICKABLE_ITEM_BACKGROUND">@drawable/theme_dark_settings_item</background>

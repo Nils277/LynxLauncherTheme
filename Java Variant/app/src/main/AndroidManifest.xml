@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="your.launcher.theme.MainActivity"><!--THIS SHOULD FIT "YOUR.PACKAGE.NAME" + .MainActivity.-->
+        <activity android:name="your.launcher.theme.MainActivity"
+            android:exported="true">
+            <!--android:name THIS SHOULD FIT "YOUR.PACKAGE.NAME" + .MainActivity.-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

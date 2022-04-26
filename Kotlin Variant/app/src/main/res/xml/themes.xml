@@ -101,8 +101,9 @@
         <!--~~~~~~~~~~~~~~~Search Screen~~~~~~~~~~~~~~~-->
 
         <!--Icons-->
-        <icon name="ICON_SEARCH_RESULT_CONTACT">@color/theme_light_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_APPS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_SHORTCUTS">@color/theme_light_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_CONTACT">@color/theme_light_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_SETTING">@color/theme_light_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_CALCULATOR">@color/theme_light_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_RECENT">@color/theme_light_icon_color</icon>
@@ -406,6 +407,7 @@
 
         <!--Icons-->
         <icon name="ICON_SEARCH_RESULT_APPS">@color/theme_dark_icon_color</icon>
+        <icon name="ICON_SEARCH_RESULT_SHORTCUTS">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_CONTACT">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_SETTING">@color/theme_dark_icon_color</icon>
         <icon name="ICON_SEARCH_RESULT_CALCULATOR">@color/theme_dark_icon_color</icon>

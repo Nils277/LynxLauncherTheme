@@ -740,7 +740,6 @@ Icon in the main settings screen for options to save and restore the launcher or
 
 **ICON_SETTINGS_FEEDBACK**
 Icon in the main settings screen to take the user to the store page of the app to make a feedback.
-(This icon is not used in LynxLauncher version 1.4.0 and later)
 
 **ICON_SETTINGS_INFO**
 Icon in the main settings screen for options regarding information about the launcher.
@@ -752,15 +751,16 @@ Icon in the main settings screen for options regarding "help & support" for the 
 Icon in the main settings screen for options for the work profile if available.
 
 **ICON_SETTINGS_DATA_PROTECTION**
-Icon in the main settings screen to show a dialog with the privacy protection texts.
-(This icon is not used in LynxLauncher version 1.4.0 and later)
+Icon in the main settings screen to show a dialog with the privacy protection texts.  
+*(This icon is not used in LynxLauncher version 1.4.0 and later)*
 
 **ICON_SETTINGS_LICENSES**
-Icon in the main settings screen to show a dialog showing the licenses used by the launcher.
-(This icon is not used in LynxLauncher version 1.4.0 and later)
+Icon in the main settings screen to show a dialog showing the licenses used by the launcher.  
+*(This icon is not used in LynxLauncher version 1.4.0 and later)*
 
 **ICON_SETTINGS_VERSION**
-Icon in the main settings screen for the version of the application
+Icon in the main settings screen for the version of the application  
+*(This icon is not used in LynxLauncher version 1.4.0 and later)*
 
 **ICON_SETTINGS_HOME_RESET**
 Icon in the main settings screen to reset the launcher on the smartphone and select a new one
